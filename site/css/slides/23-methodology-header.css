@@ -1,0 +1,130 @@
+/* ===== Slide 23 — Methodology header ===== */
+#s-23 {
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: right edge */
+  justify-content: space-between;
+  padding: 48px;
+  font-family: var(--font-main);
+}
+#s-23 h1, #s-23 p { margin: 0; }
+
+/* decorative wavy 3d background (left side) */
+#s-23 .s23-wave {
+  position: absolute;
+  left: -60px;
+  top: -50px;
+  width: 358.331px;
+  height: 627px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+#s-23 .s23-wave img {
+  width: 627px;
+  height: 358.331px;
+  max-width: none;
+  flex: none;
+  transform: rotate(90deg);
+  object-fit: cover;
+}
+
+/* soft blue sweep glow */
+#s-23 .s23-sweep {
+  position: absolute;
+  left: -150px;
+  top: 50px;
+  width: 600px;
+  height: 600px;
+  max-width: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* header row (top right) */
+#s-23 .s23-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  width: 100%;
+  flex: none;
+}
+#s-23 .s23-logo {
+  width: 69px;
+  height: 52px;
+  flex: none;
+}
+#s-23 .s23-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  color: #0d1b3e;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* gradient divider */
+#s-23 .s23-divider {
+  position: relative;
+  width: 280px;
+  height: 4px;
+  border-radius: 99px;
+  background: linear-gradient(to right, #183eeb, #4a8fe7);
+  flex: none;
+}
+
+/* title block */
+#s-23 .s23-title-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start; /* RTL: right edge */
+  text-align: right;
+  width: 100%;
+  flex: none;
+}
+#s-23 .s23-title {
+  font-size: 64px;
+  font-weight: 800;
+  color: #0d1b3e;
+  line-height: normal;
+  width: 100%;
+}
+#s-23 .s23-subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  width: 100%;
+  background-image: linear-gradient(56.855deg, #4a8fe7 29.105%, #295081 99%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#s-23 .s23-desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.6;
+  width: 600px;
+}
+
+/* footer */
+#s-23 .s23-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
+  font-size: 10px;
+  white-space: nowrap;
+  flex: none;
+}
+#s-23 .s23-brand { color: #4a8fe7; font-weight: 600; }
+#s-23 .s23-page { color: #6b7280; font-weight: 700; }

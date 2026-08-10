@@ -1,0 +1,240 @@
+/* Slide 12 — juman-ai-intro (Figma 1:2994) */
+
+#s-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px;
+  background: linear-gradient(131.18592512439204deg, #ffffff 5.0884%, #f8fafc 37.298%, #c3d8ed 77.932%, #dce9f6 108.16%);
+  font-family: var(--font-main);
+}
+
+/* Header: Arabic title at visual right, JUMAN AI INTRO at visual left */
+#s-12 .s12-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+#s-12 .s12-header-ar {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+}
+
+#s-12 .s12-header-en {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: normal;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* Hero row: sphere pinned to the visual right, text to its left */
+#s-12 .s12-hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* RTL start = right edge */
+  gap: 110px;
+}
+
+/* Concentric background ellipses (centered on the sphere) */
+#s-12 .s12-ellipse {
+  position: absolute;
+  pointer-events: none;
+}
+
+#s-12 .s12-ellipse img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+}
+
+#s-12 .s12-ellipse-outer { left: 431px; top: -94.5px; width: 592px; height: 592px; }
+#s-12 .s12-ellipse-mid   { left: 503px; top: -22.5px; width: 448px; height: 448px; }
+#s-12 .s12-ellipse-inner { left: 576px; top: 50.5px;  width: 302px; height: 302px; }
+
+/* Glossy 3D sphere render (swappable fx layer) */
+#s-12 .s12-sphere {
+  width: 403px;
+  height: 403px;
+  flex-shrink: 0;
+  object-fit: cover;
+  max-width: none;
+  pointer-events: none;
+}
+
+/* Launch details column, right-aligned text */
+#s-12 .s12-details {
+  width: 431px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start; /* RTL cross-start = right */
+  text-align: right;
+}
+
+#s-12 .s12-badge-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* RTL start = right */
+}
+
+#s-12 .s12-pill {
+  display: inline-flex;
+  align-items: flex-start;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(74, 143, 231, 0.13);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: normal;
+  color: #4a8fe7;
+  white-space: nowrap;
+}
+
+#s-12 .s12-title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: normal;
+  white-space: nowrap;
+  background-image: linear-gradient(66.87847753384142deg, #0d1b3e 47.51%, #2247a4 111.68%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+#s-12 .s12-subtitle {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: normal;
+  color: #2e5ca8;
+  white-space: nowrap;
+}
+
+#s-12 .s12-desc {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b7280;
+  word-break: break-word;
+}
+
+/* Floating glass chips around the sphere */
+#s-12 .s12-chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 8px;
+  border-radius: 8px;
+}
+
+#s-12 .s12-chip p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 1.8;
+  color: #000000;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#s-12 .s12-chip-support {
+  left: 534px;
+  top: 300.5px;
+  background: linear-gradient(88.56340413029587deg, rgba(255, 255, 255, 0.32) 8.0817%, rgba(246, 248, 255, 0.32) 109.48%);
+}
+
+#s-12 .s12-chip-secure {
+  left: 787px;
+  top: 34.5px;
+  background: linear-gradient(87.89051121493665deg, rgba(255, 255, 255, 0.32) 8.0817%, rgba(246, 248, 255, 0.32) 109.48%);
+}
+
+#s-12 .s12-chip-integrate {
+  left: 795px;
+  top: 309.5px;
+  background: linear-gradient(87.89051121493665deg, rgba(255, 255, 255, 0.32) 8.0817%, rgba(246, 248, 255, 0.32) 109.48%);
+}
+
+#s-12 .s12-chip-local {
+  left: 468px;
+  top: 85.5px;
+  background: linear-gradient(88.29418899275191deg, rgba(255, 255, 255, 0.32) 8.0817%, rgba(246, 248, 255, 0.32) 109.48%);
+}
+
+#s-12 .s12-chip-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+#s-12 .s12-chip-icon img {
+  position: absolute;
+  max-width: none;
+  display: block;
+}
+
+#s-12 .s12-icon-cs img    { inset: 5.21% 5.21% 5.24% 5.21%; width: 89.58%; height: 89.55%; }
+#s-12 .s12-icon-lock img  { inset: 5.21% 7.29% 5.21% 7.3%;  width: 85.41%; height: 89.58%; }
+#s-12 .s12-icon-link img  { inset: 5.21% 17.71%;            width: 64.58%; height: 89.58%; }
+#s-12 .s12-icon-local img { inset: 5.21%;                   width: 89.58%; height: 89.58%; }
+
+/* Footer: 10 at visual right, brand at visual left */
+#s-12 .s12-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+#s-12 .s12-brand {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: normal;
+  color: #2b5ea7;
+}
+
+#s-12 .s12-page {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: normal;
+  color: #9ca3af;
+}

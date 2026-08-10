@@ -1,0 +1,119 @@
+#s-25 {
+  background: #f8fafc;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Giant watermark number, background layer */
+#s-25 .big-num {
+  position: absolute;
+  left: 60px;
+  top: 100px;
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: 260px;
+  line-height: normal;
+  color: #4a8fe7;
+  opacity: 0.06;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Top row: logo (right), eyebrow (left) */
+#s-25 .head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+}
+
+#s-25 .head .logo {
+  display: block;
+  width: 69px;
+  height: 52px;
+}
+
+#s-25 .head .eyebrow {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: normal;
+  color: #4a8fe7;
+  white-space: nowrap;
+}
+
+/* Gradient divider, anchored to the right edge */
+#s-25 .divider {
+  position: relative;
+  width: 280px;
+  height: 4px;
+  margin-left: auto;
+  border-radius: 99px;
+  background: linear-gradient(to right, #183eeb 0%, #4a8fe7 100%);
+}
+
+/* Title block */
+#s-25 .title-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  text-align: right;
+}
+
+#s-25 .title-block .title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: normal;
+  color: #0d1b3e;
+}
+
+#s-25 .title-block .desc {
+  margin: 0;
+  width: 600px;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* Footer row: page number (right), brand (left) */
+#s-25 .foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#s-25 .foot .brand {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: normal;
+  color: #4a8fe7;
+  white-space: nowrap;
+}
+
+#s-25 .foot .page-num {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: normal;
+  color: #6b7280;
+  white-space: nowrap;
+}

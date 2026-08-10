@@ -1,0 +1,71 @@
+.title {
+  position: relative;
+}
+
+.wordWrap {
+  white-space: pre-wrap;
+}
+
+.word {
+  display: inline-block;
+  position: relative;
+  will-change: transform;
+}
+
+.letter {
+  display: inline-block;
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    color 0.35s ease;
+}
+
+/* Titles are often gradient-filled via background-clip:text on the heading.
+   Chrome refuses to paint an ancestor's clipped background through
+   descendants that have their own transform (which every animated word/letter
+   here does), leaving invisible glyphs. Re-painting the inherited background
+   clipped at EACH level makes the transformed element itself the clipper,
+   which Chrome renders correctly. Plain-color titles inherit `none` — no-op. */
+.wordWrap,
+.word,
+.letter {
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Arabic words: intact text run + cursor-lit overlay clipped to the glyphs */
+.arabic::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    90px 90px at var(--wx, -200px) var(--wy, -200px),
+    var(--sky-500) 0%,
+    rgba(74, 143, 231, 0.55) 40%,
+    transparent 72%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* effects only on hover-capable fine pointers (class set from JS matchMedia) */
+.interactive .letter:hover {
+  transform: translateY(-0.14em) scale(1.08);
+  color: var(--sky-500);
+}
+
+.interactive:hover .arabic::after {
+  opacity: 1;
+}
+
+.interactive .arabic {
+  transition: transform 0.35s var(--ease-out-expo);
+}
+
+.interactive .arabic:hover {
+  transform: translateY(-0.06em);
+}

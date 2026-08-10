@@ -1,0 +1,208 @@
+/* Slide 30 — Contact page */
+
+#s-30 {
+  background-image: linear-gradient(
+    131.186deg,
+    #dce9f6 5.09%,
+    #c3d8ed 35.32%,
+    #f8fafc 75.95%,
+    #ffffff 108.16%
+  );
+  font-family: var(--font-main);
+}
+
+/* header */
+#s-30 .slide-header {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#s-30 .title-ar {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.26;
+  color: #0d1b3e;
+  white-space: nowrap;
+}
+
+#s-30 .title-en {
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* headline */
+#s-30 .contact-header {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+#s-30 .contact-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.26;
+  white-space: nowrap;
+  background-image: linear-gradient(105.921deg, rgb(13, 27, 62) 26.77%, rgb(34, 71, 164) 104.55%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#s-30 .contact-sub {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.26;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* 3d phone hero */
+#s-30 .phone-hero {
+  position: absolute;
+  left: 352px;
+  top: 272px;
+  width: 320px;
+  height: 198px;
+}
+
+#s-30 .blue-circle {
+  position: absolute;
+  left: -5px;
+  top: 68.5px;
+  width: 131px;
+  height: 130px;
+  border-radius: 142px;
+  background-image: linear-gradient(164.491deg, rgb(26, 58, 107) 10.926%, rgb(51, 113, 209) 98.425%);
+}
+
+#s-30 .glass-circle {
+  position: absolute;
+  left: 61px;
+  top: 0;
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+#s-30 .glass-circle img {
+  width: 118px;
+  height: 118px;
+  object-fit: cover;
+}
+
+/* decorative glass rings */
+#s-30 .ring {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+#s-30 .ring-lg {
+  left: 860px;
+  top: 216px;
+  width: 80px;
+  height: 80px;
+}
+
+#s-30 .ring-sm-left {
+  left: 146px;
+  top: 311px;
+  width: 31px;
+  height: 31px;
+}
+
+#s-30 .ring-sm-right {
+  left: 826px;
+  top: 391px;
+  width: 31px;
+  height: 31px;
+}
+
+/* contact info grid */
+#s-30 .info-grid {
+  position: absolute;
+  left: 68.5px;
+  width: 887px;
+  top: 504px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#s-30 .info-row {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#s-30 .info-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.26;
+  color: #0d1b3e;
+  white-space: nowrap;
+}
+
+#s-30 .info-icon {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+#s-30 .info-icon img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+#s-30 .icon-location img {
+  inset: 5.21% 13.53% 5.21% 13.54%;
+  width: 72.93%;
+  height: 89.58%;
+}
+
+#s-30 .icon-phone img {
+  inset: 9.37% 9.37% 9.38% 9.38%;
+  width: 81.25%;
+  height: 81.25%;
+}
+
+#s-30 .icon-mail img {
+  inset: 11.46% 5.21%;
+  width: 89.58%;
+  height: 77.08%;
+}

@@ -1,0 +1,178 @@
+/* ============ Slide 07 — about-us-detail-2 (حوكمة وسيادة البيانات الوطنية) ============ */
+#s-07 {
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  font-family: var(--font-main);
+}
+
+/* ---- header ---- */
+#s-07 .slide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#s-07 .slide-header p {
+  margin: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-07 .header-ar {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0d1b3e;
+  text-align: right;
+}
+
+#s-07 .header-en {
+  font-weight: 500;
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* ---- bento cards ---- */
+#s-07 .bento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+#s-07 .card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 1px;
+  height: 280px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+#s-07 .card-line {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a8fe7 0%, #1a3a6b 100%);
+}
+
+/* icon + number, hugging the physical right edge (flex-start in RTL) */
+#s-07 .card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#s-07 .icon {
+  position: relative;
+  overflow: hidden;
+  flex: none;
+}
+
+#s-07 .icon img {
+  position: absolute;
+  max-width: none;
+  display: block;
+}
+
+#s-07 .icon-lock { width: 154px; height: 131px; }
+#s-07 .icon-lock img {
+  width: 141.53%;
+  height: 166.67%;
+  left: -43.4%;
+  top: -33.33%;
+}
+
+#s-07 .icon-shield { width: 176px; height: 131px; }
+#s-07 .icon-shield img {
+  width: 134.73%;
+  height: 180.72%;
+  left: -30.06%;
+  top: -40.36%;
+}
+
+#s-07 .icon-target { width: 185px; height: 120px; }
+#s-07 .icon-target img {
+  width: 164.32%;
+  height: 253.33%;
+  left: -46.49%;
+  top: -76.67%;
+}
+
+#s-07 .num {
+  margin: 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: #4a8fe7;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* title + description */
+#s-07 .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  text-align: right;
+}
+
+#s-07 .card-text h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: #0d1b3e;
+  line-height: normal;
+}
+
+#s-07 .card-text p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ---- footer ---- */
+#s-07 .slide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#s-07 .slide-footer p {
+  margin: 0;
+  font-size: 10px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-07 .brand {
+  font-weight: 600;
+  color: #2b5ea7;
+}
+
+#s-07 .page {
+  font-weight: 700;
+  color: #9ca3af;
+}

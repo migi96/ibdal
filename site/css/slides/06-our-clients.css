@@ -1,0 +1,182 @@
+/* ============ Slide 06 — our-clients (شركاء النجاح) ============ */
+
+#s-06 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; /* RTL: start = right edge */
+  padding: 48px;
+  background: linear-gradient(131.186deg, #dce9f6 5.0884%, #c3d8ed 35.316%, #f8fafc 75.95%, #ffffff 108.16%);
+}
+
+/* decorative swirl behind content */
+#s-06 .s6-decor {
+  position: absolute;
+  left: 500px;
+  top: -50px;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+}
+
+#s-06 .s6-decor img {
+  position: absolute;
+  left: -25%;
+  top: -25%;
+  width: 150%;
+  height: 150%;
+  max-width: none;
+}
+
+/* ---- header ---- */
+#s-06 .s6-header {
+  align-self: stretch;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 16px;
+}
+
+#s-06 .s6-header-ar {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#s-06 .s6-header-en {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: normal;
+  color: #6b7280;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---- clients panel ---- */
+#s-06 .s6-panel {
+  position: relative;
+  width: 891px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#s-06 .s6-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#s-06 .s6-tile {
+  flex: none;
+  width: 100px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid #d1dbf4;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#s-06 .s6-logo {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  flex: none;
+}
+
+#s-06 .s6-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+}
+
+/* logo boxes — width = min(80, 60 * aspect), height = width / aspect */
+#s-06 .s6-l-albenaa     { width: 80px;   height: 44.9px; }
+#s-06 .s6-l-taraahum    { width: 80px;   height: 36.9px; }
+#s-06 .s6-l-moccae      { width: 80px;   height: 49.7px; }
+#s-06 .s6-l-dasc        { width: 80px;   height: 18.7px; }
+#s-06 .s6-l-client05    { width: 80px;   height: 16px;   }
+#s-06 .s6-l-darah       { width: 60px;   height: 60px;   }
+#s-06 .s6-l-geosa       { width: 80px;   height: 30.9px; }
+#s-06 .s6-l-etqaan      { width: 80px;   height: 42.3px; }
+#s-06 .s6-l-innosoft    { width: 80px;   height: 29.3px; }
+#s-06 .s6-l-insiyab     { width: 80px;   height: 36.8px; }
+#s-06 .s6-l-360saudi    { width: 60px;   height: 60px;   }
+#s-06 .s6-l-erpnext     { width: 80px;   height: 49.2px; }
+#s-06 .s6-l-evolvingweb { width: 80px;   height: 39.7px; }
+#s-06 .s6-l-raydion     { width: 58.1px; height: 60px;   }
+#s-06 .s6-l-digitlnext  { width: 80px;   height: 17.6px; }
+#s-06 .s6-l-alkhabeer   { width: 80px;   height: 20.8px; }
+#s-06 .s6-l-youpal      { width: 80px;   height: 41.3px; }
+#s-06 .s6-l-xtend       { width: 80px;   height: 28.8px; }
+#s-06 .s6-l-tendegrees  { width: 60px;   height: 60px;   }
+#s-06 .s6-l-procstation { width: 80px;   height: 45.9px; }
+#s-06 .s6-l-retaj       { width: 80px;   height: 31.9px; }
+#s-06 .s6-l-sac         { width: 60px;   height: 60px;   }
+#s-06 .s6-l-parmg       { width: 60px;   height: 60px;   }
+#s-06 .s6-l-ecolor      { width: 60px;   height: 60px;   }
+#s-06 .s6-l-elitestars  { width: 80px;   height: 47.4px; }
+#s-06 .s6-l-h2h         { width: 60px;   height: 60px;   }
+#s-06 .s6-l-emblem      { width: 54.4px; height: 60px;   }
+
+/* cropped source images (Figma crop transforms) */
+#s-06 .s6-l-moccae img {
+  right: auto; bottom: auto;
+  left: 0; top: -17.76%;
+  width: 100%; height: 135.53%;
+  object-fit: fill;
+}
+
+#s-06 .s6-l-innosoft img {
+  right: auto; bottom: auto;
+  left: -0.61%; top: -56.9%;
+  width: 100%; height: 213.8%;
+  object-fit: fill;
+}
+
+#s-06 .s6-l-evolvingweb img {
+  right: auto; bottom: auto;
+  left: -13.7%; top: -16.72%;
+  width: 126.36%; height: 133.44%;
+  object-fit: fill;
+}
+
+#s-06 .s6-l-raydion img {
+  right: auto; bottom: auto;
+  left: -3.23%; top: -0.18%;
+  width: 106.45%; height: 100.36%;
+  object-fit: fill;
+}
+
+#s-06 .s6-l-elitestars img {
+  right: auto; bottom: auto;
+  left: -6.48%; top: -0.04%;
+  width: 112.96%; height: 100.08%;
+  object-fit: fill;
+}
+
+#s-06 .s6-l-emblem img {
+  right: auto; bottom: auto;
+  left: -5.17%; top: 0;
+  width: 110.34%; height: 100%;
+  object-fit: fill;
+}

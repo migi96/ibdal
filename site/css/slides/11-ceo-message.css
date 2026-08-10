@@ -1,0 +1,214 @@
+/* Slide 11 — ceo-message (Figma 1:2969) */
+
+#s-11 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px;
+  background: #f8fafc;
+  font-family: var(--font-main);
+}
+
+/* Header: CEO MESSAGE at visual right, Arabic title at visual left */
+#s-11 .s11-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+#s-11 .s11-header-ar {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+}
+
+#s-11 .s11-header-en {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: normal;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* Editorial split: text at right, portrait at left */
+#s-11 .s11-split {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+#s-11 .s11-text {
+  width: 556px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+#s-11 .s11-quote-block {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+#s-11 .s11-quote-line {
+  position: relative;
+  width: 0;
+  height: 96px;
+  flex-shrink: 0;
+}
+
+#s-11 .s11-quote-line img {
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 96px;
+  height: 4px;
+  max-width: none;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  display: block;
+}
+
+#s-11 .s11-quote {
+  margin: 0;
+  flex: 1 0 0;
+  min-width: 1px;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #0d1b3e;
+  text-align: right;
+  word-break: break-word;
+}
+
+#s-11 .s11-body {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #6b7280;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Signature block: right-aligned (cross-axis start in RTL) */
+#s-11 .s11-signature {
+  width: 100%;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: right;
+}
+
+#s-11 .s11-name {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: normal;
+  color: #0d1b3e;
+  white-space: nowrap;
+}
+
+#s-11 .s11-role {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 11px;
+  line-height: normal;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+#s-11 .s11-sig-img {
+  width: 80px;
+  height: 32px;
+  display: block;
+}
+
+/* Portrait with glossy 3D comma marks overlapping bottom-right */
+#s-11 .s11-portrait {
+  position: relative;
+  width: 320px;
+  height: 360px;
+  flex-shrink: 0;
+}
+
+#s-11 .s11-photo {
+  position: absolute;
+  inset: 0;
+  width: 320px;
+  height: 360px;
+  max-width: none;
+  display: block;
+}
+
+#s-11 .s11-comma {
+  position: absolute;
+  top: 216px;
+  width: 68px;
+  height: 106px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#s-11 .s11-comma-a { left: 192px; }
+#s-11 .s11-comma-b { left: 260px; }
+
+#s-11 .s11-comma img {
+  position: absolute;
+  left: -70.59%;
+  top: -27.36%;
+  width: 241.18%;
+  height: 154.72%;
+  max-width: none;
+  display: block;
+}
+
+/* Footer: 09 at visual right, brand at visual left */
+#s-11 .s11-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+#s-11 .s11-brand {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: normal;
+  color: #2b5ea7;
+}
+
+#s-11 .s11-page {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 10px;
+  line-height: normal;
+  color: #9ca3af;
+}

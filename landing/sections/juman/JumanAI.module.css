@@ -1,0 +1,639 @@
+/* ============ جُمان AI — dark product showcase (deck slides 12–14) ============ */
+
+.juman {
+  position: relative;
+  overflow: clip;
+  color: var(--white);
+  background:
+    radial-gradient(55% 34% at 12% 6%, rgba(24, 62, 235, 0.22), transparent 62%),
+    radial-gradient(45% 30% at 92% 52%, rgba(74, 143, 231, 0.13), transparent 65%),
+    linear-gradient(195deg, var(--navy-900) 0%, var(--navy-950) 52%, #090d1c 100%);
+}
+
+/* —— drifting glow field behind all three acts —— */
+.bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glowA,
+.glowB,
+.glowC {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.glowA {
+  top: 4%;
+  inset-inline-end: -180px;
+  width: 520px;
+  height: 520px;
+}
+
+.glowB {
+  top: 38%;
+  inset-inline-start: -200px;
+  width: 560px;
+  height: 560px;
+}
+
+.glowC {
+  bottom: -6%;
+  inset-inline-end: 8%;
+  width: 440px;
+  height: 440px;
+}
+
+.glowA span,
+.glowB span,
+.glowC span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.glowA span {
+  background: radial-gradient(circle, rgba(24, 62, 235, 0.3), transparent 65%);
+}
+
+.glowB span {
+  background: radial-gradient(circle, rgba(74, 143, 231, 0.2), transparent 65%);
+}
+
+.glowC span {
+  background: radial-gradient(circle, rgba(24, 62, 235, 0.22), transparent 65%);
+}
+
+/* —— shared act scaffolding —— */
+.act {
+  position: relative;
+  padding-block: clamp(64px, 8vw, 116px);
+}
+
+.actHead {
+  display: grid;
+  justify-items: start;
+  margin-block-end: 14px;
+}
+
+.actTitle {
+  margin-block-end: clamp(36px, 5vw, 60px);
+}
+
+.title {
+  background: linear-gradient(115deg, #ffffff 30%, #9db9ee 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rise {
+  will-change: transform, opacity;
+}
+
+/* ============ Act 1 · intro ============ */
+.intro {
+  padding-block-start: clamp(88px, 11vw, 150px);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 80px);
+}
+
+.introCopy {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+}
+
+.launchPill {
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(24, 62, 235, 0.28);
+  border: 1px solid rgba(122, 161, 255, 0.4);
+  color: #cfe0ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: var(--sky-500);
+  font-weight: 700;
+  font-size: clamp(17px, 1.7vw, 22px);
+  line-height: 1.6;
+}
+
+.desc {
+  max-width: 50ch;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 300;
+  line-height: 1.95;
+  color: rgba(228, 236, 252, 0.8);
+}
+
+/* the glossy أب letters + floating chips */
+.introStage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(360px, 40vw, 520px);
+}
+
+.introStage::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24, 62, 235, 0.3), transparent 68%);
+  pointer-events: none;
+}
+
+.letterWrap {
+  width: min(100%, 440px);
+}
+
+.letterFloat {
+  will-change: transform;
+  filter: drop-shadow(0 44px 90px rgba(24, 62, 235, 0.45));
+}
+
+.letterImg {
+  width: 100%;
+  height: auto;
+}
+
+.chipLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.94);
+  color: var(--navy-900);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 20px 44px -18px rgba(4, 10, 30, 0.65);
+  will-change: transform, opacity;
+}
+
+.chipIcon {
+  width: 22px;
+  height: 22px;
+}
+
+/* deck slide 12 placement, translated to logical sides */
+.chipSecure {
+  top: 5%;
+  inset-inline-start: 6%;
+}
+
+.chipLocal {
+  top: 20%;
+  inset-inline-end: 0;
+}
+
+.chipSupport {
+  bottom: 17%;
+  inset-inline-end: 5%;
+}
+
+.chipIntegrate {
+  bottom: 4%;
+  inset-inline-start: 10%;
+}
+
+/* ============ Act 2 · capabilities ============ */
+.caps {
+  isolation: isolate;
+}
+
+.capsTexture {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.capsTextureImg {
+  object-fit: cover;
+}
+
+.capsInner {
+  position: relative;
+}
+
+.capGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(18px, 2.2vw, 28px);
+  align-items: stretch;
+}
+
+.cardHero {
+  grid-row: 1 / span 2;
+}
+
+/* glass card */
+.card {
+  position: relative;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: clamp(22px, 2.4vw, 32px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(165deg, rgba(34, 52, 110, 0.5), rgba(11, 16, 32, 0.86));
+  border: 1px solid rgba(110, 150, 255, 0.16);
+  transition:
+    border-color 0.45s var(--ease-out-expo),
+    box-shadow 0.45s var(--ease-out-expo);
+  will-change: transform;
+}
+
+/* cyber glow that breathes in on hover */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -30% -30% auto;
+  height: 90%;
+  background: radial-gradient(50% 60% at 50% 0%, rgba(24, 62, 235, 0.4), transparent 72%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: rgba(122, 161, 255, 0.45);
+  box-shadow: 0 34px 90px -42px rgba(24, 62, 235, 0.85);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTag {
+  color: var(--sky-500);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(74, 143, 231, 0.12);
+  border: 1px solid rgba(122, 161, 255, 0.22);
+}
+
+.cardIcon img {
+  width: 22px;
+  height: 22px;
+}
+
+.cardText h4 {
+  font-size: clamp(19px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-block-end: 10px;
+}
+
+.cardText p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(228, 236, 252, 0.78);
+}
+
+/* hero card: art commands the middle */
+.heroFig {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 10px;
+}
+
+.heroLetter {
+  width: min(70%, 320px);
+  height: auto;
+  filter: drop-shadow(0 32px 64px rgba(24, 62, 235, 0.5));
+}
+
+/* side cards: head row, then text beside the render */
+.cardSide {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 14px;
+}
+
+.cardSide .cardHead {
+  grid-column: 1 / -1;
+}
+
+.cardFig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figServer {
+  width: min(100%, 230px);
+  height: auto;
+  filter: drop-shadow(0 24px 48px rgba(24, 62, 235, 0.45));
+}
+
+/* self-drawing infinity loop canvas (fixed-aspect stage) */
+.loopStage {
+  position: relative;
+  width: min(100%, 230px);
+  aspect-ratio: 216 / 200;
+  justify-self: center;
+}
+
+.loopCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============ Act 3 · architecture ============ */
+.archGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 60px);
+}
+
+.archCopy {
+  display: grid;
+  gap: clamp(26px, 3vw, 40px);
+}
+
+.archIntro {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+.sovereignPill {
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--blue-700), #2e6fe0);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 16px 40px -18px rgba(24, 62, 235, 0.9);
+}
+
+.archDesc {
+  max-width: 40ch;
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 300;
+  line-height: 1.95;
+  color: rgba(228, 236, 252, 0.82);
+}
+
+.spokes {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
+.spoke {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-block: 10px;
+  padding-inline: 18px 22px;
+  border-radius: 14px;
+  background: rgba(17, 26, 54, 0.78);
+  border: 1px solid rgba(122, 161, 255, 0.2);
+  will-change: transform, opacity;
+}
+
+/* cascade the pills toward the docking field */
+.spoke:nth-child(2) {
+  margin-inline-start: 12%;
+}
+
+.spoke:nth-child(3) {
+  margin-inline-start: 24%;
+}
+
+.spokeIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: rgba(74, 143, 231, 0.14);
+  border: 1px solid rgba(122, 161, 255, 0.24);
+}
+
+.spokeIcon img {
+  width: 20px;
+  height: 20px;
+}
+
+.spokeLabel {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* centerpiece: isometric tiles docking around the glass sphere */
+.archStage {
+  position: relative;
+  width: min(100%, 430px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.archStage::before {
+  content: "";
+  position: absolute;
+  inset: 6%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(24, 62, 235, 0.28), transparent 66%);
+  pointer-events: none;
+}
+
+.archCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* thin connectors radiating to the integration pills.
+   Geometry is decorative and RTL-fixed, so physical transform-origins are safe:
+   spoke lines grow to the physical right (inline-start side), the comm line
+   to the physical left (inline-end side). */
+.line {
+  position: absolute;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(122, 161, 255, 0),
+    rgba(122, 161, 255, 0.5) 28% 72%,
+    rgba(122, 161, 255, 0)
+  );
+  will-change: transform, opacity;
+}
+
+.lineErp {
+  top: 28%;
+  inset-inline-end: 90%;
+  width: 50%;
+  transform: rotate(-13deg);
+  transform-origin: left center;
+}
+
+.lineCrm {
+  top: 47%;
+  inset-inline-end: 92%;
+  width: 54%;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+
+.lineDb {
+  top: 62%;
+  inset-inline-end: 90%;
+  width: 48%;
+  transform: rotate(10deg);
+  transform-origin: left center;
+}
+
+.lineComm {
+  top: 50%;
+  inset-inline-start: 90%;
+  width: 46%;
+  transform: rotate(-7deg);
+  transform-origin: right center;
+}
+
+.commCard {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  max-width: 320px;
+  padding: clamp(20px, 2vw, 28px);
+  border-radius: var(--radius-lg);
+  background: rgba(17, 26, 54, 0.78);
+  border: 1px solid rgba(122, 161, 255, 0.2);
+}
+
+.commCard h4 {
+  font-size: clamp(18px, 1.7vw, 22px);
+  font-weight: 700;
+}
+
+.commCard p {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(228, 236, 252, 0.75);
+}
+
+/* ============ responsive ≤900px ============ */
+@media (max-width: 900px) {
+  .introGrid,
+  .capGrid,
+  .archGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .introStage {
+    flex-direction: column;
+    gap: 28px;
+    min-height: 0;
+  }
+
+  .letterWrap {
+    width: min(78%, 340px);
+  }
+
+  .chipLayer {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    pointer-events: auto;
+  }
+
+  .chip {
+    position: static;
+  }
+
+  .cardHero {
+    grid-row: auto;
+  }
+
+  .cardSide {
+    grid-template-columns: 1fr;
+  }
+
+  .cardSide .cardFig {
+    order: 1;
+  }
+
+  .cardSide .cardText {
+    order: 2;
+  }
+
+  .figServer,
+  .loopStage {
+    width: min(64%, 210px);
+  }
+
+  .archStage {
+    width: min(88%, 340px);
+    margin-inline: auto;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .spoke:nth-child(2),
+  .spoke:nth-child(3) {
+    margin-inline-start: 0;
+  }
+
+  .commCard {
+    max-width: none;
+  }
+}

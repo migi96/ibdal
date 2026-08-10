@@ -1,0 +1,255 @@
+/* Slide 21 — dga-framework (DGA governance framework) */
+
+#s-21 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  background: linear-gradient(131.186deg, #dce9f6 5.0884%, #c3d8ed 35.316%, #f8fafc 75.95%, #ffffff 108.16%);
+}
+
+/* decorative concentric rings behind the diagram */
+#s-21 .ring {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+}
+#s-21 .ring-outer  { left: 101px; top: 136px; width: 314px; height: 314px; }
+#s-21 .ring-middle { left: 139px; top: 174px; width: 238px; height: 238px; }
+#s-21 .ring-inner  { left: 178px; top: 213px; width: 160px; height: 160px; }
+
+/* blurred glow, top-left */
+#s-21 .glow {
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  width: 350px;
+  height: 350px;
+  pointer-events: none;
+}
+#s-21 .glow img {
+  position: absolute;
+  left: -28.57%;
+  top: -28.57%;
+  width: 157.14%;
+  height: 157.14%;
+  max-width: none;
+}
+
+/* ---- header ---- */
+#s-21 .head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+#s-21 .head-title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+}
+#s-21 .head-eyebrow {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: normal;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* ---- content grid ---- */
+#s-21 .content {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex: 1 0 0;
+  min-height: 1px;
+  width: 100%;
+}
+
+/* text panel (right in RTL) */
+#s-21 .text-panel {
+  flex: 1 1 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start; /* RTL: inline-start = right */
+}
+#s-21 .badge {
+  background: rgba(74, 143, 231, 0.08);
+  border-radius: 4px;
+  padding: 6px 14px;
+}
+#s-21 .badge p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: normal;
+  color: #4a8fe7;
+  white-space: nowrap;
+}
+#s-21 .panel-title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+  width: 100%;
+}
+#s-21 .panel-desc {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b7280;
+  text-align: right;
+  width: 100%;
+}
+#s-21 .bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+#s-21 .bullets li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+#s-21 .check {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  display: block;
+}
+#s-21 .check img {
+  position: absolute;
+  left: 5.21%;
+  top: 5.21%;
+  width: 89.58%;
+  height: 89.58%;
+  max-width: none;
+}
+#s-21 .bullets p {
+  margin: 0;
+  flex: 1 1 0;
+  min-width: 1px;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  color: #6b7280;
+  text-align: right;
+}
+
+/* diagram panel (left in RTL) */
+#s-21 .diagram {
+  position: relative;
+  width: 420px;
+  height: 340px;
+  flex: none;
+}
+#s-21 .hub {
+  position: absolute;
+  left: 131px;
+  top: 119px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+}
+#s-21 .hub img {
+  display: block;
+  width: 126px;
+  height: 38px;
+  object-fit: cover;
+}
+#s-21 .pillar {
+  position: absolute;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+#s-21 .pillar p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  color: #0d1b3e;
+  white-space: nowrap;
+}
+#s-21 .pillar-governance { left: 250px; top: 40px; }
+#s-21 .pillar-data       { left: 60px;  top: 40px; }
+#s-21 .pillar-tech       { left: 250px; top: 200px; }
+#s-21 .pillar-security   { left: 60px;  top: 200px; }
+
+#s-21 .p-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex: none;
+}
+#s-21 .p-icon img {
+  position: absolute;
+  top: 5.21%;
+  height: 89.58%;
+  max-width: none;
+}
+#s-21 .icon-scale img { left: 9.37%;  width: 81.26%; }
+#s-21 .icon-code img  { left: 5.21%;  width: 89.58%; }
+#s-21 .icon-db img    { left: 13.54%; width: 72.92%; }
+#s-21 .icon-lock img  { left: 7.3%;   width: 85.41%; }
+
+/* ---- footer ---- */
+#s-21 .footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+#s-21 .footer p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 10px;
+  line-height: normal;
+}
+#s-21 .footer-brand {
+  font-weight: 600;
+  color: #4a8fe7;
+}
+#s-21 .footer-num {
+  font-weight: 700;
+  color: #6b7280;
+}

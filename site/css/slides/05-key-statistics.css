@@ -1,0 +1,162 @@
+/* ============ Slide 05 — key-statistics (إنجازاتنا بالأرقام) ============ */
+
+#s-05 {
+  background: linear-gradient(131.186deg, #dce9f6 5.0884%, #c3d8ed 35.316%, #f8fafc 75.95%, #ffffff 108.16%);
+}
+
+#s-05 .s5-content {
+  position: absolute;
+  left: 76px;
+  top: 40px;
+  width: 872px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#s-05 .s5-title {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: normal;
+  color: #0f172a;
+  text-align: center;
+}
+
+#s-05 .s5-subtitle {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+  color: #475569;
+  text-align: center;
+}
+
+#s-05 .s5-accent {
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #06b6d4, #2563eb);
+}
+
+/* ---- stat cards grid ---- */
+#s-05 .s5-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 24px;
+  width: 100%;
+}
+
+#s-05 .s5-card {
+  position: relative;
+  width: 200px;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(226, 232, 240, 0.4), #ffffff);
+}
+
+#s-05 .s5-num {
+  position: absolute;
+  left: 100px;
+  top: 45px;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 48px;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  background: linear-gradient(to bottom, #1a3a6b, #3371d1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+#s-05 .s5-label {
+  position: absolute;
+  left: 100px;
+  top: 120px;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: normal;
+  color: #64748b;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* card artwork (tinted 3D renders) */
+#s-05 .s5-img {
+  position: absolute;
+}
+
+#s-05 .s5-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+}
+
+#s-05 .s5-img .s5-tint {
+  position: absolute;
+  inset: 0;
+  background: #2e5ca8;
+  mix-blend-mode: color;
+}
+
+/* NOTE: no transforms here — a transform would create a stacking context that
+   isolates the mix-blend tint from the card background (solid blue over the
+   images' transparent areas). Offsets are precomputed in px instead. */
+#s-05 .s5-img-globe {
+  width: 315px;
+  height: 239px;
+  left: -57px; /* calc(50% + 0.5px) - 315/2 */
+  top: 156px;
+}
+
+#s-05 .s5-img-partners {
+  width: 227px;
+  height: 241px;
+  left: -13px; /* calc(50% + 0.5px) - 227/2 */
+  top: 156px;
+}
+
+#s-05 .s5-img-experts {
+  width: 276px;
+  height: 276px;
+  left: -38px;
+  top: 173px;
+}
+
+#s-05 .s5-img-projects {
+  width: 250px;
+  height: 250px;
+  left: -25px; /* 50% - 250/2 */
+  top: 140px;
+}
+
+/* footer caption */
+#s-05 .s5-caption {
+  position: absolute;
+  left: 56px;
+  top: 540px;
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: normal;
+  color: #94a3b8;
+  white-space: nowrap;
+}

@@ -1,0 +1,108 @@
+/* ============ Ibdal deck — shared tokens & slide frame ============ */
+:root {
+  --font-main: 'Alexandria', system-ui, -apple-system, sans-serif;
+
+  /* palette pulled from the Figma file */
+  --navy-900: #0d1b3e;
+  --dark: #141b34;
+  --ink: #161616;
+  --muted: #6b7280;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --sky-100: #eef3fb;
+  --page-bg: #0b1020;
+
+  --slide-scale: 1;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.deck { width: 100%; }
+
+/* one full viewport per slide, slide scaled to fit */
+.slide-wrap {
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}
+
+.slide {
+  width: 1024px;
+  height: 576px;
+  flex: none;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  transform: scale(var(--slide-scale));
+  box-shadow: 0 30px 80px rgba(3, 8, 26, 0.55);
+  border-radius: 6px;
+}
+
+.slide, .slide * { direction: rtl; }
+.slide [dir="ltr"], .slide [dir="ltr"] * { direction: ltr; }
+
+/* heads-up display: progress + counter */
+.hud {
+  position: fixed;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 50;
+  font-family: var(--font-main);
+}
+
+.hud-progress {
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  width: 0%;
+  transition: width .25s ease;
+}
+
+.hud-counter {
+  position: absolute;
+  bottom: 14px;
+  inset-inline-end: 18px;
+  color: #93a4c4;
+  font-size: 12px;
+  letter-spacing: .12em;
+  background: rgba(10, 15, 32, 0.55);
+  border: 1px solid rgba(147, 164, 196, .25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.hud-hint {
+  position: absolute;
+  bottom: 14px;
+  inset-inline-start: 18px;
+  color: #6b7a99;
+  font-size: 11px;
+  letter-spacing: .05em;
+  opacity: .8;
+}
+
+@media (max-width: 640px) {
+  .hud-hint { display: none; }
+}

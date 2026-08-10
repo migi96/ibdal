@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream Lines (no image) — AI services hero</title>
+  <link rel="stylesheet" href="modernist.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="stream-wave.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); font-family: var(--font-body); }
+    a { color: var(--color-accent-700); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    .hero { position: relative; height: 470px; overflow: hidden;
+      border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); }
+    .hero canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+    .hero-copy { position: relative; padding: 56px 56px 0; max-width: 660px; pointer-events: none; }
+    .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+    h1 { font-size: 52px; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 20px; max-width: 14em; text-wrap: pretty; }
+    .lede { font-size: 16px; line-height: 1.6; max-width: 30em; margin: 0 0 28px; color: var(--color-neutral-800); }
+    .actions { display: flex; gap: 12px; pointer-events: auto; }
+    @media (max-width: 760px) {
+      .hero { height: 520px; }
+      .hero-copy { padding: 40px 24px 0; }
+      h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <canvas id="stage"></canvas>
+    <div class="hero-copy">
+      <div class="kicker">AI Services</div>
+      <h1>Put a model behind every decision your product makes.</h1>
+      <p class="lede">Design, evaluation and deployment handled end to end, on your data and your cloud.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#">Book a technical review</a>
+        <a class="btn btn-ghost" href="#">See our work</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var opts = { speed: 1, intensity: 1, pointerFollow: true };
+    WaveCodeFX.ready().then(function () {
+      WaveCodeFX.streamWave(document.getElementById('stage'), opts);
+    });
+  </script>
+</body>
+</html>

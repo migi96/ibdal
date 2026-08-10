@@ -1,0 +1,213 @@
+/* ============ Global offices — light slide with 3D map backdrop ============ */
+
+.offices {
+  overflow: clip;
+  background:
+    radial-gradient(60% 50% at 85% 0%, rgba(74, 143, 231, 0.14), transparent 70%),
+    linear-gradient(205deg, var(--sky-100) 0%, var(--paper) 55%, #e8f0fa 100%);
+}
+
+/* blurred halo from the deck — asset sits at the top inline-start corner
+   (top-right in RTL, matching the slide) */
+.decor {
+  position: absolute;
+  inset-block-start: -180px;
+  inset-inline-start: -160px;
+  width: 520px;
+  height: 520px;
+  background: url("/assets/28-global-offices/decor-top-right.svg") center / contain
+    no-repeat;
+  pointer-events: none;
+}
+
+/* ---- map backdrop ---- */
+/* inline-end = physical left in RTL, where the map lives on the slide */
+.mapLayer {
+  position: absolute;
+  inset-block: clamp(48px, 7vw, 110px) 0;
+  inset-inline-end: -6%;
+  inline-size: min(58vw, 940px);
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(95% 85% at 45% 52%, #000 42%, transparent 76%);
+  mask-image: radial-gradient(95% 85% at 45% 52%, #000 42%, transparent 76%);
+}
+
+/* bleed so the parallax drift (~±8vh) never exposes a hard edge */
+.mapParallax {
+  position: absolute;
+  inset: -12% 0;
+}
+
+.mapImg {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ---- content ---- */
+.inner {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-block-end: clamp(18px, 2.4vw, 28px);
+  border-block-end: 1px solid rgba(13, 27, 62, 0.08);
+  margin-block-end: clamp(40px, 5.5vw, 72px);
+}
+
+.title {
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.header .headerEn {
+  color: var(--muted);
+}
+
+/* cards column pinned to inline-start (right in RTL), floating over the map */
+.cards {
+  display: grid;
+  gap: clamp(18px, 2.2vw, 26px);
+  inline-size: min(100%, 620px);
+  margin-inline-end: auto;
+}
+
+/* ---- frosted-glass office card ---- */
+.card {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: clamp(24px, 3vw, 34px) clamp(24px, 3.2vw, 38px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.72),
+    rgba(255, 255, 255, 0.42)
+  );
+  border: 1px solid var(--white);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 14px 40px rgba(13, 27, 62, 0.07);
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo);
+}
+
+/* hover: lift + soft blue glow beneath */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 64px rgba(24, 62, 235, 0.16),
+    0 8px 22px rgba(13, 27, 62, 0.08);
+}
+
+/* pin that drops in on hover, at the card's free corner (inline-end) */
+.pin {
+  position: absolute;
+  inset-block-start: 30px;
+  inset-inline-end: 28px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue-700);
+  box-shadow:
+    0 0 0 4px rgba(24, 62, 235, 0.14),
+    0 8px 20px rgba(24, 62, 235, 0.45);
+  opacity: 0;
+  transform: translateY(-14px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.5s var(--ease-out-expo);
+}
+
+.pin::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 62, 235, 0.45);
+  opacity: 0;
+}
+
+.card:hover .pin {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover .pin::before {
+  animation: pinPulse 1.7s ease-out infinite;
+}
+
+@keyframes pinPulse {
+  from {
+    transform: scale(0.55);
+    opacity: 0.85;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.cardTitle {
+  font-size: clamp(19px, 2.1vw, 24px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--navy-900);
+  padding-inline-end: 36px; /* keep clear of the pin */
+}
+
+.cardDesc {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* Latin contact line — LTR run, aligned to the card's visual end like the deck */
+.cardContact {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-align: end;
+  color: var(--muted);
+}
+
+.contactLink {
+  color: var(--sky-500);
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.contactLink:hover {
+  color: var(--blue-700);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contactSep {
+  color: rgba(107, 114, 128, 0.55);
+}
+
+/* ---- responsive: cards stack full-width, map becomes a faint backdrop ---- */
+@media (max-width: 900px) {
+  .mapLayer {
+    inset-block: 0;
+    inset-inline: -30% -18%;
+    inline-size: auto;
+    opacity: 0.4;
+  }
+
+  .cards {
+    inline-size: 100%;
+  }
+
+  .decor {
+    inset-block-start: -240px;
+  }
+}

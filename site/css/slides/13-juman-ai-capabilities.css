@@ -1,0 +1,255 @@
+/* Slide 13 — Juman AI Capabilities (dark bento) */
+
+#s-13 {
+  background: linear-gradient(180deg, #000000 0%, #0d1b3e 100%);
+  font-family: var(--font-main);
+}
+
+/* -- background texture ------------------------------------------------ */
+#s-13 .bg-texture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3112px;
+  height: 1750px;
+  pointer-events: none;
+}
+
+#s-13 .bg-texture img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: color-dodge;
+  opacity: 0.7;
+}
+
+/* -- header ------------------------------------------------------------ */
+#s-13 .slide-header {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#s-13 .slide-header .title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 37px;
+  color: #ffffff;
+  text-align: right;
+  margin: 0;
+}
+
+#s-13 .slide-header .kicker {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* -- cards (shared) ---------------------------------------------------- */
+#s-13 .card {
+  position: absolute;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(6, 17, 62, 0.24) 0%, rgba(15, 45, 164, 0.6) 100%);
+  overflow: hidden;
+}
+
+#s-13 .cyber-glow {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  height: 60px;
+  background: linear-gradient(0deg, rgba(45, 137, 212, 0.12) 0%, rgba(45, 137, 212, 0) 100%);
+  pointer-events: none;
+}
+
+#s-13 .cyber-glow-lg {
+  height: 80px;
+}
+
+#s-13 .card-head {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#s-13 .card-num {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #4a8fe7;
+}
+
+#s-13 .icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+#s-13 .icon img {
+  position: absolute;
+  display: block;
+}
+
+#s-13 .icon-link img {
+  left: 9.38%;
+  top: 9.37%;
+  width: 81.25%;
+  height: 81.25%;
+}
+
+#s-13 .icon-segment img {
+  left: 5.21%;
+  top: 9.37%;
+  width: 89.58%;
+  height: 81.25%;
+}
+
+#s-13 .icon-language img {
+  left: 5.21%;
+  top: 5.21%;
+  width: 89.58%;
+  height: 89.58%;
+}
+
+#s-13 .card-text {
+  position: absolute;
+  top: 64px;
+  left: 28px;
+  width: 200px;
+  text-align: right;
+}
+
+#s-13 .card-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+#s-13 .card-text p {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #9aa7c7;
+  margin: 0;
+}
+
+#s-13 .card-fig {
+  position: absolute;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+#s-13 .card-fig img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* -- left stacked column ----------------------------------------------- */
+#s-13 .card-integration {
+  top: 117px;
+  left: 48px;
+  width: 444px;
+  height: 197px;
+}
+
+#s-13 .card-integration .card-fig {
+  left: 201px;
+  top: -38px;
+  width: 276px;
+  height: 276px;
+}
+
+#s-13 .card-learning {
+  top: 330px;
+  left: 48px;
+  width: 444px;
+  height: 198px;
+}
+
+#s-13 .card-learning .card-text h3 {
+  white-space: nowrap;
+}
+
+#s-13 .card-learning .card-fig {
+  left: 228px;
+  top: -8px;
+  width: 223px;
+  height: 223px;
+}
+
+/* -- right hero card --------------------------------------------------- */
+#s-13 .card-hero {
+  top: 117px;
+  left: 536px;
+  width: 440px;
+  height: 411px;
+}
+
+#s-13 .hero-inner {
+  position: absolute;
+  inset: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+#s-13 .hero-head {
+  position: static;
+  width: 100%;
+}
+
+#s-13 .hero-tag {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff 0%, #2e5ca8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#s-13 .hero-letter {
+  width: 187px;
+  height: 187px;
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+
+#s-13 .hero-text {
+  position: static;
+  width: 100%;
+}
+
+#s-13 .hero-text h3 {
+  font-size: 20px;
+}
+
+#s-13 .hero-text p {
+  font-size: 13px;
+  line-height: 1.6;
+}

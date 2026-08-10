@@ -1,0 +1,202 @@
+#s-27 {
+  background-color: #02030a;
+  background-image: radial-gradient(
+    ellipse 284.47px 180px at 512px 288px,
+    rgba(8, 14, 38, 1) 0%,
+    rgba(4, 7, 22, 1) 40%,
+    rgba(2, 3, 10, 1) 100%
+  );
+}
+
+/* Decorative background render (wider than the slide; cropped by overflow) */
+#s-27 .wallpaper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 576px;
+  max-width: none;
+  object-fit: cover;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* 3D logo emblem */
+#s-27 .emblem {
+  position: absolute;
+  left: 624px;
+  top: 150px;
+  width: 287px;
+  height: 214.83px;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Left column */
+#s-27 .col {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 512px;
+  height: 576px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#s-27 .head {
+  width: 100%;
+  text-align: right;
+}
+
+#s-27 .head .eyebrow {
+  margin: 0 0 6px;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 8px;
+  color: #adcdf6;
+  white-space: nowrap;
+}
+
+#s-27 .head .title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: normal;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Cards stack */
+#s-27 .cards {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Glass card: icon on the right, text to its left */
+#s-27 .card {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px 12px 16px; /* physical: right 20, left 16 */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(172.919deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.031) 43.922%, rgba(59, 130, 246, 0.078) 73.203%),
+    linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04));
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  box-shadow:
+    0px 6px 20px -4px rgba(0, 0, 0, 0.2),
+    inset 0px 0px 35px -10px rgba(59, 130, 246, 0.07),
+    inset 0px 1px 0px 0px rgba(255, 255, 255, 0.05);
+}
+
+/* Glowing icon square */
+#s-27 .icon-box {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 0.75px solid rgba(59, 130, 246, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle 23px at 23px 23px, rgba(59, 130, 246, 0.18) 0%, rgba(30, 65, 123, 0.09) 50%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(rgba(59, 130, 246, 0.07), rgba(59, 130, 246, 0.07));
+  box-shadow: 0px 0px 16px 0px rgba(59, 130, 246, 0.25);
+}
+
+#s-27 .icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+
+#s-27 .icon img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+#s-27 .icon-shield-key img {
+  inset: 5.21% 9.37%;
+}
+
+#s-27 .icon-user-group img {
+  inset: 15.59% 7.29% 15.62% 7.29%;
+}
+
+#s-27 .icon-web-design img {
+  inset: 5.21%;
+}
+
+#s-27 .icon-cloud-done img {
+  inset: 5.21%;
+}
+
+/* Card text — fills card height, content right-aligned from the top */
+#s-27 .card-text {
+  flex: 1 1 0;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: inline start = right */
+  gap: 4px;
+  text-align: right;
+  overflow: hidden;
+}
+
+#s-27 .badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 0.5px solid rgba(59, 130, 246, 0.15);
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.12);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 8px;
+  line-height: normal;
+  color: #3b82f6;
+  white-space: nowrap;
+}
+
+#s-27 .card-title {
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: normal;
+  color: #ffffff;
+}
+
+#s-27 .card-desc {
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 9px;
+  line-height: normal;
+  color: #dbdee4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

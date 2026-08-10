@@ -1,0 +1,119 @@
+/* ============ Ibdal landing — global tokens & base ============ */
+:root {
+  --font-main: var(--font-alexandria), system-ui, sans-serif;
+
+  /* palette from the Figma deck */
+  --navy-950: #0b1020;
+  --navy-900: #0d1b3e;
+  --navy-800: #141b34;
+  --blue-700: #183eeb;
+  --blue-600: #2563eb;
+  --blue-500: #2e5ca8;
+  --sky-500: #4a8fe7;
+  --sky-100: #eef3fb;
+  --paper: #f8fafc;
+  --white: #ffffff;
+  --muted: #6b7280;
+
+  --grad-royal: linear-gradient(217deg, #183eeb 0%, #0b0b0b 130%);
+  --grad-title: linear-gradient(120deg, #0d1b3e 20%, #2247a4 80%);
+  --grad-divider: linear-gradient(90deg, #183eeb, #4a8fe7);
+
+  --container: 1200px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--navy-900);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--blue-700);
+  color: var(--white);
+}
+
+/* layout utilities */
+.container {
+  width: min(100% - 48px, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(72px, 10vw, 140px);
+}
+
+/* shared type scale */
+.kicker {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sky-500);
+}
+
+/* Alexandria's Arabic glyphs overshoot the em box; tighter values clip
+   descenders into whatever sits below the heading */
+.h-display {
+  font-size: clamp(40px, 7vw, 88px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.h-section {
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.divider {
+  width: 120px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--grad-divider);
+}
+
+/* motion hygiene: never animate anything for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

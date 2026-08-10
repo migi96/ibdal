@@ -1,0 +1,178 @@
+/* ============ Slide 09 — values-header (قيمنا الجوهرية) ============ */
+#s-09 {
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  font-family: var(--font-main);
+}
+
+/* full-bleed dark photo: portrait frame rotated 90° cw, cover-filled (as in Figma) */
+#s-09 .bg-wrap {
+  position: absolute;
+  left: -298px;
+  top: -80px;
+  width: 1324px;
+  height: 736px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#s-09 .bg-wrap img {
+  flex: none;
+  width: 736px;
+  height: 1324px;
+  max-width: none;
+  object-fit: cover;
+  transform: rotate(90deg);
+}
+
+/* soft blue blurred glows */
+#s-09 .decor-sweep {
+  position: absolute;
+  left: 600px;
+  top: 120px;
+  width: 450px;
+  height: 450px;
+  pointer-events: none;
+}
+
+#s-09 .decor-sweep img {
+  position: absolute;
+  left: -31.11%;
+  top: -31.11%;
+  width: 162.22%;
+  height: 162.22%;
+  max-width: none;
+  display: block;
+}
+
+#s-09 .decor-left-glow {
+  position: absolute;
+  left: -150px;
+  top: -100px;
+  width: 350px;
+  height: 350px;
+  pointer-events: none;
+}
+
+#s-09 .decor-left-glow img {
+  position: absolute;
+  left: -28.57%;
+  top: -28.57%;
+  width: 157.14%;
+  height: 157.14%;
+  max-width: none;
+  display: block;
+}
+
+/* ---- top-right logo + kicker ---- */
+#s-09 .logo-accent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: physical right */
+  gap: 16px;
+  width: 100%;
+}
+
+#s-09 .logo {
+  width: 69px;
+  height: 52px;
+  overflow: hidden;
+  flex: none;
+}
+
+#s-09 .logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#s-09 .kicker {
+  margin: 0;
+  font-weight: 600;
+  font-size: 11px;
+  color: #e2e8f0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+/* ---- title block ---- */
+#s-09 .title-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: physical right */
+  gap: 20px;
+  width: 100%;
+}
+
+#s-09 .title-line {
+  position: relative;
+  width: 120px;
+  height: 0;
+  flex: none;
+}
+
+#s-09 .title-line img {
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 120px;
+  height: 4px;
+  max-width: none;
+  display: block;
+}
+
+#s-09 h1 {
+  margin: 0;
+  min-width: 100%;
+  font-weight: 800;
+  font-size: 64px;
+  color: #ffffff;
+  text-align: right;
+  line-height: normal;
+}
+
+#s-09 .sub {
+  margin: 0;
+  width: 600px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #dcdcdc;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ---- footer ---- */
+#s-09 .slide-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#s-09 .slide-footer p {
+  margin: 0;
+  font-size: 10px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-09 .brand {
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+#s-09 .page {
+  font-weight: 700;
+  color: #dcdcdc;
+}

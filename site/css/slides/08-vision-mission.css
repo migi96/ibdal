@@ -1,0 +1,139 @@
+/* ============ Slide 08 — vision-mission (الرؤية والرسالة) ============ */
+#s-08 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  font-family: var(--font-main);
+}
+
+/* flowing wave background, blended into the white page */
+#s-08 .wave-bg {
+  position: absolute;
+  left: -11px;
+  top: 120px;
+  width: 1035px;
+  height: 596px;
+  max-width: none;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ---- header ---- */
+#s-08 .slide-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#s-08 .slide-header p {
+  margin: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-08 .header-ar {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0d1b3e;
+  text-align: right;
+}
+
+#s-08 .header-en {
+  font-weight: 500;
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+/* ---- vision / mission stack ---- */
+#s-08 .vm-stack {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 26px;
+  width: 100%;
+  padding: 40px 12px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+#s-08 .vm-block {
+  flex: 1 1 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 8px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#s-08 .label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: #2b5ea7;
+}
+
+#s-08 .label-row p {
+  margin: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-08 .label-ar {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+#s-08 .label-en {
+  font-weight: 500;
+  font-size: 10px;
+}
+
+#s-08 .vm-body {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: #6b7280;
+  text-align: right;
+  width: 100%;
+}
+
+#s-08 .vision .vm-body { line-height: 1.5; }
+#s-08 .mission .vm-body { line-height: 1.7; }
+
+/* ---- footer ---- */
+#s-08 .slide-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#s-08 .slide-footer p {
+  margin: 0;
+  font-size: 10px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-08 .brand {
+  font-weight: 600;
+  color: #2b5ea7;
+}
+
+#s-08 .page {
+  font-weight: 700;
+  color: #9ca3af;
+}

@@ -1,0 +1,172 @@
+#s-02 {
+  background: linear-gradient(217.124deg, #183eeb 46.23%, #0b0b0b 133.46%);
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+#s-02 p {
+  margin: 0;
+  font-family: var(--font-main);
+  line-height: normal;
+}
+
+/* Header (title block, right-aligned) */
+#s-02 .header {
+  width: 100%;
+  padding: 48px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: right side */
+  justify-content: center;
+  gap: 24px;
+  flex: none;
+}
+
+#s-02 .header-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+#s-02 .title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 26px;
+  color: #f8fafc;
+  text-align: right;
+}
+
+#s-02 .subtitle {
+  font-weight: 500;
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#s-02 .accent-bar {
+  width: 120px;
+  height: 4px;
+  background: #4a8fe7;
+  border-radius: 2px;
+}
+
+/* TOC list column (right 716px of the slide) */
+#s-02 .content {
+  position: relative;
+  width: 716px;
+  flex: 1 0 0;
+  min-height: 1px;
+  align-self: flex-start; /* RTL: right edge */
+  padding: 48px 24px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Light-streaks render sweeping across the left half */
+#s-02 .fx-wrap {
+  position: absolute;
+  left: calc(50% - 525.5px);
+  top: calc(50% + 38px);
+  width: 1833px;
+  height: 1031px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* blend applied here (not on the img): the transformed inner wrapper creates a
+     stacking context that would otherwise isolate the blend from the gradient */
+  mix-blend-mode: screen;
+}
+
+#s-02 .fx-rot {
+  flex: none;
+  width: 1031px;
+  height: 1833px;
+  transform: rotate(90deg) scaleY(-1);
+}
+
+#s-02 #s-02-fx {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TOC rows: number on the right, text to its left */
+#s-02 .toc-row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#s-02 .toc-row.last {
+  border-bottom: 0;
+}
+
+#s-02 .num {
+  flex: none;
+  width: 50px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 28px;
+  color: #4a8fe7;
+}
+
+#s-02 .txt {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: right */
+  gap: 4px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#s-02 .txt .t {
+  font-weight: 700;
+  font-size: 15px;
+  color: #f8fafc;
+}
+
+#s-02 .txt .d {
+  font-weight: 400;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Footer: page number right, brand left */
+#s-02 .slide-footer {
+  width: 100%;
+  flex: none;
+  padding: 16px 48px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+#s-02 .page-num {
+  font-weight: 700;
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+#s-02 .brand {
+  font-weight: 600;
+  font-size: 10px;
+  color: #4a8fe7;
+}

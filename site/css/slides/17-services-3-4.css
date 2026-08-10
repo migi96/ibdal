@@ -1,0 +1,246 @@
+/* Slide 17 — Services 3-4 (dark split: artificial intelligence & cybersecurity) */
+
+#s-17 {
+  background: #080b1a;
+  font-family: var(--font-main);
+  display: flex;
+  align-items: stretch;
+}
+
+/* hairline frame around the whole slide (Figma root stroke) */
+#s-17 .frame-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* -- royal-blue gradient side panel (physical right in RTL) ------------ */
+#s-17 .accent {
+  flex: none;
+  width: 320px;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #183eeb 0%, #0b112c 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#s-17 .accent-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start; /* RTL: flex-start = right edge */
+  width: 100%;
+}
+
+/* logo lockup rebuilt from its three exported groups (148 x 20) */
+#s-17 .logo {
+  position: relative;
+  width: 148px;
+  height: 20px;
+  overflow: hidden;
+}
+
+#s-17 .logo img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+#s-17 .logo-mark {
+  left: 0;
+  top: 0;
+  width: 18.33%;
+  height: 100%;
+}
+
+#s-17 .logo-ar {
+  left: 22.81%;
+  top: 0;
+  width: 77.19%;
+  height: 60.61%;
+}
+
+#s-17 .logo-en {
+  left: 22.94%;
+  top: 69.1%;
+  width: 76.72%;
+  height: 28.14%;
+}
+
+#s-17 .accent-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  text-align: right;
+}
+
+#s-17 .accent-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+#s-17 .accent-kicker {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #a3b4ff;
+  text-align: right;
+}
+
+#s-17 .accent-num {
+  margin: 0;
+  width: 100%;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.1);
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* -- services column --------------------------------------------------- */
+#s-17 .content {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#s-17 .stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+#s-17 .service-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 24px;
+  background: #101426;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+#s-17 .icon-wrap {
+  flex: none;
+  display: block;
+  padding: 12px;
+  background: rgba(24, 62, 235, 0.14);
+  border-radius: 100px;
+}
+
+#s-17 .icon {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+#s-17 .icon img {
+  position: absolute;
+  display: block;
+  max-width: none;
+}
+
+#s-17 .icon-lock img {
+  left: 7.3%;
+  top: 5.21%;
+  width: 85.41%;
+  height: 89.58%;
+}
+
+#s-17 .icon-brain img {
+  left: 7.29%;
+  top: 5.21%;
+  width: 85.42%;
+  height: 89.58%;
+}
+
+#s-17 .service-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+#s-17 .service-text h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: normal;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+#s-17 .service-text p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8e97b0;
+}
+
+#s-17 .chev {
+  flex: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+#s-17 .chev img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13.59px;
+  height: 7.67px;
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(-90.72deg);
+}
+
+/* -- footer ------------------------------------------------------------ */
+#s-17 .foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#s-17 .foot-brand {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: normal;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+#s-17 .foot-page {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: normal;
+  color: #8e97b0;
+  white-space: nowrap;
+}
+
+#s-17 .foot-line {
+  display: block;
+  width: 100px;
+  height: 1px;
+}

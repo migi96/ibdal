@@ -1,0 +1,104 @@
+.clients {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(52% 44% at 88% 0%, rgba(74, 143, 231, 0.12), transparent 68%),
+    var(--white);
+}
+
+.head {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+  margin-block-end: clamp(44px, 6vw, 76px);
+}
+
+/* the deck's "50+" oversized stat, kept as a ghost accent */
+.bigNum {
+  position: absolute;
+  inset-block-start: -0.3em;
+  inset-inline-end: 0;
+  font-size: clamp(96px, 14vw, 200px);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(13, 27, 62, 0.045);
+  pointer-events: none;
+  user-select: none;
+}
+
+.title {
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.desc {
+  max-width: 58ch;
+  font-size: clamp(15px, 1.7vw, 18px);
+  font-weight: 300;
+  line-height: 1.95;
+  color: var(--muted);
+}
+
+/* full-bleed belts; the Marquee's own mask fades the edges */
+.belts {
+  display: grid;
+  gap: 22px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 108px;
+  min-width: 172px;
+  padding-inline: 30px;
+  margin-inline-end: 18px;
+  background: var(--white);
+  border: 1px solid #e3ebf7;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(13, 27, 62, 0.05);
+  transition:
+    transform 0.4s var(--ease-out-expo),
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(74, 143, 231, 0.45);
+  box-shadow: 0 16px 42px rgba(13, 27, 62, 0.1);
+}
+
+.logo {
+  height: 64px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition:
+    filter 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.tile:hover .logo {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .tile {
+    height: 88px;
+    min-width: 136px;
+    padding-inline: 22px;
+    margin-inline-end: 12px;
+  }
+
+  .logo {
+    height: 48px;
+    max-width: 116px;
+  }
+}

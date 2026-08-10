@@ -1,0 +1,184 @@
+/* Slide 10 — values-bento (dark-mode-values-bento, Figma 1:2923) */
+
+#s-10 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 48px;
+  background-color: #101e5f;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1024 576' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><rect x='0' y='0' height='100%25' width='100%25' fill='url(%23grad)' opacity='1'/><defs><radialGradient id='grad' gradientUnits='userSpaceOnUse' cx='0' cy='0' r='10' gradientTransform='matrix(-59.162 59.163 -101.12 -62.458 588.8 259.88)'><stop stop-color='rgba(24,62,235,1)' offset='0'/><stop stop-color='rgba(21,49,179,1)' offset='0.25'/><stop stop-color='rgba(18,37,123,1)' offset='0.5'/><stop stop-color='rgba(16,30,95,1)' offset='0.625'/><stop stop-color='rgba(14,24,67,1)' offset='0.75'/><stop stop-color='rgba(13,17,39,1)' offset='0.875'/><stop stop-color='rgba(11,11,11,1)' offset='1'/></radialGradient></defs></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-family: var(--font-main);
+}
+
+#s-10 .s10-title {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: normal;
+  color: #ffffff;
+  text-align: right;
+  word-break: break-word;
+}
+
+#s-10 .s10-grid {
+  flex: 1 0 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#s-10 .s10-row {
+  flex: 1 0 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+#s-10 .s10-col {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#s-10 .s10-col-wide {
+  max-width: 516px;
+}
+
+#s-10 .s10-card {
+  position: relative;
+  flex: 1 0 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(0, 0, 99, 0.02);
+  overflow: hidden;
+}
+
+#s-10 .s10-card-sm {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#s-10 .s10-card-wide {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#s-10 .s10-glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -0.5px;
+  background: linear-gradient(to bottom, rgba(45, 212, 191, 0) 0%, rgba(45, 212, 191, 0.12) 100%);
+  pointer-events: none;
+}
+
+#s-10 .s10-glow-full {
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
+}
+
+#s-10 .s10-content {
+  flex: 1 0 0;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+  word-break: break-word;
+}
+
+#s-10 .s10-content h3 {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  color: #ffffff;
+}
+
+#s-10 .s10-content p {
+  margin: 0;
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9aa7c7;
+}
+
+#s-10 .s10-card-wide .s10-content h3 {
+  font-size: 18px;
+}
+
+#s-10 .s10-card-wide .s10-content p {
+  font-size: 13px;
+}
+
+/* Tall innovation card: image on top, pinned to the visual left (flex-end in RTL) */
+#s-10 .s10-card-innovation {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#s-10 .s10-card-innovation .s10-art {
+  align-self: flex-end;
+}
+
+#s-10 .s10-card-innovation .s10-content {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/* Open-source card: horizontal, vertically centered */
+#s-10 .s10-card-open {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 3D asset placeholders */
+#s-10 .s10-art {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+#s-10 .s10-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  border-radius: 16px;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+#s-10 .s10-art-lock { width: 100px; height: 100px; }
+#s-10 .s10-art-gears { width: 100px; height: 100px; }
+#s-10 .s10-art-chip { width: 78px; height: 78px; }
+#s-10 .s10-art-sphere { width: 130px; height: 87px; }
+#s-10 .s10-art-server { width: 100px; height: 94px; }
+#s-10 .s10-art-heads { width: 100px; height: 100px; }
+
+#s-10 .s10-art-heads img {
+  object-fit: contain;
+}

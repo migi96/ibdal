@@ -1,0 +1,197 @@
+/* ===== Slide 22 — GRC light bento ===== */
+#s-22 {
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 36px 48px 32px;
+  font-family: var(--font-main);
+}
+#s-22 h2, #s-22 h3, #s-22 p { margin: 0; }
+
+/* header */
+#s-22 .s22-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+  flex: none;
+}
+#s-22 .s22-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: normal;
+}
+#s-22 .s22-eyebrow {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: #64748b;
+  line-height: normal;
+}
+
+/* bento grid */
+#s-22 .s22-grid {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+#s-22 .s22-card {
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px -2px rgba(15, 23, 42, 0.06), 0px 1px 3px 0px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+/* governance card (right) */
+#s-22 .s22-gov {
+  /* fixed half width: Chromium adds padding+border on top of flex-basis:0,
+     which would skew the two columns (477/427 instead of 452/452) */
+  flex: none;
+  width: calc(50% - 12px);
+  min-width: 0;
+  background-image: linear-gradient(144.2deg, #ffffff 0%, #f5f8ff 42.427%, #ebf0fe 70.711%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+#s-22 .s22-gov-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+}
+#s-22 .s22-gov-text {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start; /* RTL: right edge */
+  text-align: right;
+}
+#s-22 .s22-gov-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: normal;
+  width: 100%;
+}
+#s-22 .s22-accent {
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #3b82f6, rgba(96, 165, 250, 0.3));
+  flex: none;
+}
+
+/* mini cards stack (left) */
+#s-22 .s22-stack {
+  flex: none;
+  width: calc(50% - 12px);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: stretch;
+}
+#s-22 .s22-mini {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  background-image: linear-gradient(159.46deg, #ffffff 0%, #f0f5ff 70.711%);
+  padding: 24px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+#s-22 .s22-mini-text {
+  flex: 1 1 0;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start; /* RTL: right edge */
+  text-align: right;
+}
+#s-22 .s22-mini-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: normal;
+}
+
+/* bullet text */
+#s-22 .s22-bullets {
+  color: #475569;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.8;
+  width: 100%;
+}
+#s-22 .s22-gov-bullets {
+  font-size: 11px;
+  line-height: 2;
+  /* Chrome shapes these 11px lines wider than Figma; extend the block a few px
+     into the image gap so the design's 6-line rag is reproduced exactly */
+  width: calc(100% + 25px);
+}
+/* cap the 10px bullet blocks so line breaks land exactly as in the design
+   (Chrome's Arabic shaping is slightly narrower than Figma's here) */
+#s-22 .s22-mini .s22-bullets {
+  max-width: 237px;
+}
+
+/* 3d imagery */
+#s-22 .s22-img {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: none;
+}
+#s-22 .s22-gov-img { width: 243px; height: 279px; }
+#s-22 .s22-gov-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+#s-22 .s22-shield-img { width: 125px; height: 194px; }
+#s-22 .s22-shield-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#s-22 .s22-risk-img { width: 132px; height: 146px; }
+#s-22 .s22-risk-img img {
+  position: absolute;
+  height: 100%;
+  width: 176.97%;
+  max-width: none;
+  left: -35.83%;
+  top: -0.34%;
+}
+
+/* footer */
+#s-22 .s22-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  flex: none;
+  font-size: 10px;
+  white-space: nowrap;
+}
+#s-22 .s22-brand { color: #3b82f6; font-weight: 600; }
+#s-22 .s22-page { color: #94a3b8; font-weight: 700; }

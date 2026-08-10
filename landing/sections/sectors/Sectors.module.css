@@ -1,0 +1,161 @@
+/* ============ Sectors — light pastel grid (deck slides 25 + 26) ============ */
+.sectors {
+  overflow: clip;
+  background:
+    radial-gradient(56% 42% at 88% 0%, rgba(74, 143, 231, 0.09), transparent 60%),
+    radial-gradient(48% 38% at 4% 100%, rgba(24, 62, 235, 0.06), transparent 60%),
+    var(--paper);
+}
+
+.inner {
+  position: relative;
+}
+
+/* ---- section header ---- */
+.header {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.title {
+  background: var(--grad-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub {
+  max-width: 58ch;
+  font-size: clamp(15px, 1.3vw, 18px);
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* ---- grid: two wide leads + four sector cards, mirroring slide 26 ----
+   RTL auto-placement runs right-to-left, so DOM order matches the deck. */
+.grid {
+  display: grid;
+  gap: clamp(16px, 1.8vw, 24px);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(24px, 3vw, 44px);
+  min-height: 250px;
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 2.2vw, 30px);
+  box-shadow: 0 18px 44px rgba(13, 27, 62, 0.07);
+  will-change: transform;
+  transition:
+    transform 0.45s var(--ease-out-expo),
+    box-shadow 0.45s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 64px rgba(13, 27, 62, 0.13);
+}
+
+.cardWide {
+  grid-column: span 2;
+  min-height: 280px;
+}
+
+/* soft pastel washes per sector */
+.violet { background: linear-gradient(205deg, #ffffff 0%, #e9e6fb 100%); }
+.lilac { background: linear-gradient(205deg, #fefdff 0%, #efe6f9 100%); }
+.mint { background: linear-gradient(205deg, #fbfffc 0%, #e2f4e8 100%); }
+.ice { background: linear-gradient(205deg, #fbfeff 0%, #e3f2f8 100%); }
+.cream { background: linear-gradient(205deg, #fffdf8 0%, #fdeedd 100%); }
+.blush { background: linear-gradient(205deg, #fffbfa 0%, #fde9e4 100%); }
+
+/* ---- icon chips (top inline-end, like the deck) ---- */
+.chip {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 10px 24px rgba(13, 27, 62, 0.09);
+  align-self: flex-end;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.icon {
+  width: 26px;
+  height: 26px;
+  transition: filter 0.35s ease;
+}
+
+.card:hover .chip {
+  background: var(--blue-700);
+  box-shadow: 0 12px 28px rgba(24, 62, 235, 0.35);
+}
+
+.card:hover .icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ---- copy ---- */
+.text {
+  display: grid;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: clamp(17px, 1.6vw, 23px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--navy-900);
+}
+
+.cardWide .cardTitle {
+  font-size: clamp(20px, 1.9vw, 27px);
+}
+
+.cardDesc {
+  font-size: clamp(13px, 1.15vw, 15px);
+  font-weight: 300;
+  line-height: 2;
+  color: rgba(13, 27, 62, 0.6);
+}
+
+.cardWide .cardDesc {
+  max-width: 52ch;
+  font-size: clamp(14px, 1.25vw, 16px);
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardWide {
+    grid-column: 1 / -1;
+  }
+
+  .card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .cardWide {
+    min-height: 0;
+  }
+}

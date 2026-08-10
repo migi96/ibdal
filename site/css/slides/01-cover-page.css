@@ -1,0 +1,131 @@
+#s-01 {
+  background: #f8fafc;
+}
+
+/* Huge rotated, blurred watermark logo (dark sweep at the left edge) */
+#s-01 .wm-wrap {
+  position: absolute;
+  right: 330.03px;
+  bottom: -20.29px;
+  width: 1277.965px;
+  height: 1223.708px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#s-01 .wm-rot {
+  flex: none;
+  width: 1022.505px;
+  height: 766.679px;
+  transform: rotate(-36.37deg);
+  filter: blur(2px);
+}
+
+#s-01 .wm-rot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Soft blue gradient glow, bottom-left */
+#s-01 .decor-sweep {
+  position: absolute;
+  left: -150px;
+  top: 320px;
+  width: 450px;
+  height: 450px;
+  pointer-events: none;
+}
+
+#s-01 .decor-sweep img {
+  position: absolute;
+  left: -120px;
+  top: -120px;
+  width: 690px;
+  height: 690px;
+  max-width: none;
+  display: block;
+}
+
+/* Soft blue gradient glow, top-right */
+#s-01 .decor-top-right {
+  position: absolute;
+  left: 750px;
+  top: -100px;
+  width: 350px;
+  height: 350px;
+  pointer-events: none;
+}
+
+#s-01 .decor-top-right img {
+  position: absolute;
+  left: -90px;
+  top: -90px;
+  width: 530px;
+  height: 530px;
+  max-width: none;
+  display: block;
+}
+
+/* Centered logo + metadata */
+#s-01 .center-stack {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 48px;
+}
+
+#s-01 .logo {
+  width: 256px;
+  height: 114.293px;
+  object-fit: cover;
+}
+
+#s-01 .meta {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 10px;
+  line-height: normal;
+  color: #9ca3af;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Footer row: year on the right, tagline on the left (RTL flex places first child at the right) */
+#s-01 .footer {
+  position: absolute;
+  left: 48px;
+  bottom: 60px;
+  width: 928px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#s-01 .footer p {
+  margin: 0;
+  font-family: var(--font-main);
+  line-height: normal;
+  white-space: nowrap;
+}
+
+#s-01 .year {
+  font-weight: 400;
+  font-size: 20px;
+  color: #0d1b3e;
+  text-align: center;
+}
+
+#s-01 .tagline {
+  font-weight: 500;
+  font-size: 16px;
+  color: #6b7280;
+  text-align: center;
+}

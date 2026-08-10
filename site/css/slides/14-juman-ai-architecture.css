@@ -1,0 +1,298 @@
+/* Slide 14 — Juman AI Architecture (light hub-and-spoke infographic) */
+
+#s-14 {
+  background: linear-gradient(190.79deg, #c3d8ed -30%, #dce9f6 8%, #f8fafc 65%, #ffffff 120%);
+  font-family: var(--font-main);
+}
+
+#s-14 * {
+  box-sizing: border-box;
+}
+
+/* -- header ------------------------------------------------------------ */
+#s-14 .slide-header {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  flex-direction: row-reverse; /* RTL: puts the Arabic title on the left, kicker on the right */
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#s-14 .slide-header .title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #0d1b3e;
+  margin: 0;
+}
+
+#s-14 .slide-header .kicker {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* -- infographic canvas ------------------------------------------------ */
+#s-14 .canvas {
+  position: absolute;
+  top: 122px;
+  left: 48px;
+  width: 928px;
+  height: 340px;
+}
+
+#s-14 .sovereign-pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #2b5ea7;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: normal;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+#s-14 .canvas-desc {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 300px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  color: #6b7280;
+  text-align: right;
+  margin: 0;
+}
+
+/* -- spoke pills ------------------------------------------------------- */
+#s-14 .spoke {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 160px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+#s-14 .spoke-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  color: #0d1b3e;
+  white-space: nowrap;
+}
+
+#s-14 .spoke-erp {
+  left: 464px;
+  top: 40px;
+}
+
+#s-14 .spoke-crm {
+  left: 544px;
+  top: 146px;
+}
+
+#s-14 .spoke-db {
+  left: 464px;
+  top: 220px;
+}
+
+/* -- comm card --------------------------------------------------------- */
+#s-14 .spoke-comm {
+  position: absolute;
+  left: -6px;
+  top: 27px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* RTL: content sits on the right edge */
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+#s-14 .spoke-comm h3 {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: normal;
+  color: #0d1b3e;
+  white-space: nowrap;
+  margin: 0;
+}
+
+#s-14 .spoke-comm p {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7280;
+  text-align: right;
+  width: 100%;
+  margin: 0;
+}
+
+/* -- icons ------------------------------------------------------------- */
+#s-14 .icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+#s-14 .icon img {
+  position: absolute;
+  display: block;
+}
+
+#s-14 .ic-programming {
+  left: 5.21%;
+  top: 5.21%;
+  width: 89.58%;
+  height: 89.58%;
+}
+
+#s-14 .ic-users {
+  left: 5.21%;
+  top: 9.38%;
+  width: 89.58%;
+  height: 81.25%;
+}
+
+#s-14 .ic-database {
+  left: 13.54%;
+  top: 5.21%;
+  width: 72.92%;
+  height: 89.58%;
+}
+
+#s-14 .ic-mail {
+  left: 5.21%;
+  top: 11.46%;
+  width: 89.58%;
+  height: 77.08%;
+}
+
+/* -- connector lines --------------------------------------------------- */
+#s-14 .line {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#s-14 .line img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+#s-14 .line-erp {
+  left: 340px;
+  top: 60px;
+  width: 107.25px;
+  height: 90px;
+}
+
+#s-14 .line-erp img {
+  width: 140px;
+  height: 2px;
+  transform: rotate(-40deg);
+}
+
+#s-14 .line-crm {
+  left: 340px;
+  top: 168px;
+  width: 180px;
+  height: 2px;
+}
+
+#s-14 .line-crm img {
+  width: 180px;
+  height: 2px;
+}
+
+#s-14 .line-db {
+  left: 340px;
+  top: 190px;
+  width: 107.25px;
+  height: 90px;
+}
+
+#s-14 .line-db img {
+  width: 140px;
+  height: 2px;
+  transform: rotate(40deg);
+}
+
+#s-14 .line-comm {
+  left: 156px;
+  top: 163px;
+  width: 14px;
+  height: 7px;
+}
+
+#s-14 .line-comm img {
+  width: 15.65px;
+  height: 2px;
+  transform: rotate(-153.43deg);
+}
+
+/* -- sphere fx --------------------------------------------------------- */
+#s-14 .sphere-fx {
+  position: absolute;
+  left: 147px;
+  top: 21px;
+  width: 298px;
+  height: 298px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* -- footer ------------------------------------------------------------ */
+#s-14 .slide-footer {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  flex-direction: row-reverse; /* RTL: brand on the left, page number on the right */
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+#s-14 .slide-footer p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+#s-14 .slide-footer .brand {
+  font-weight: 600;
+  color: #2b5ea7;
+  letter-spacing: 0.02em;
+}
+
+#s-14 .slide-footer .page-num {
+  font-weight: 700;
+  color: #9ca3af;
+}

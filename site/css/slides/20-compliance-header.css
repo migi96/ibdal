@@ -1,0 +1,107 @@
+/* Slide 20 — compliance-header (GRC section divider) */
+
+#s-20 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+  background: #ffffff;
+}
+
+/* soft circles blob behind the title */
+#s-20 .bg-pattern {
+  position: absolute;
+  left: 550px;
+  top: 100px;
+  width: 380px;
+  height: 380px;
+  max-width: none;
+  pointer-events: none;
+}
+
+/* ---- branding (top, right-aligned) ---- */
+#s-20 .brand {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start; /* RTL: inline-start = right */
+  width: 100%;
+}
+#s-20 .logo {
+  width: 69px;
+  height: 52px;
+  display: block;
+}
+#s-20 .grc-label {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: normal;
+  color: #2b5ea7;
+  white-space: nowrap;
+}
+
+/* ---- title block ---- */
+#s-20 .title-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start; /* RTL: inline-start = right */
+  width: 100%;
+}
+#s-20 .title {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 64px;
+  line-height: normal;
+  color: #0d1b3e;
+  text-align: right;
+  width: 100%;
+}
+#s-20 .divider {
+  width: 280px;
+  height: 4px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #183eeb 0%, #4a8fe7 100%);
+}
+#s-20 .subtitle {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6b7280;
+  text-align: right;
+  width: 600px;
+  max-width: 100%;
+}
+
+/* ---- footer ---- */
+#s-20 .footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+#s-20 .footer p {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 10px;
+  line-height: normal;
+}
+#s-20 .footer-brand {
+  font-weight: 600;
+  color: #2b5ea7;
+}
+#s-20 .footer-num {
+  font-weight: 700;
+  color: #9ca3af;
+}
