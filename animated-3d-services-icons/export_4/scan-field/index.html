@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scan Field — AI services section</title>
+  <link rel="stylesheet" href="modernist.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="scan-field.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); font-family: var(--font-body); }
+    a { color: var(--color-accent-700); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px; }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) 460px;
+      border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); }
+    .copy { padding: 56px 48px 48px 0; border-right: 2px solid var(--color-divider); }
+    .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+    h1 { font-size: 44px; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 20px; max-width: 12em; text-wrap: pretty; }
+    .lede { font-size: 16px; line-height: 1.6; max-width: 34em; margin: 0 0 32px; color: var(--color-neutral-800); }
+    .list { border-top: 2px solid var(--color-divider); margin-bottom: 32px; }
+    .list div { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--color-divider); font-size: 14px; }
+    .list span:first-child { color: var(--color-neutral-600); width: 2.5em; }
+    .actions { display: flex; gap: 12px; }
+    .stage-col { padding: 16px 0 24px 40px; }
+    .stage-label { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-divider); font-size: 10px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--color-neutral-600); }
+    .stage { position: relative; height: 420px; overflow: hidden; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .tick { position: absolute; width: 14px; height: 14px; }
+    .tick-tl { left: 0; top: 0; border-left: 2px solid var(--color-accent); border-top: 2px solid var(--color-accent); }
+    .tick-br { right: 0; bottom: 0; border-right: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+    @media (max-width: 1000px) {
+      .row { grid-template-columns: minmax(0, 1fr); }
+      .copy { padding: 40px 0 32px; border-right: 0; border-bottom: 2px solid var(--color-divider); }
+      h1 { font-size: 32px; }
+      .stage-col { padding: 16px 0 24px; }
+      .stage { height: 340px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row">
+      <div class="copy">
+        <div class="kicker">AI Services</div>
+        <h1>Look at any answer and see how it was reached.</h1>
+        <p class="lede">Traces, citations and evaluation on every response, so the reasoning is inspectable rather than assumed.</p>
+        <div class="list">
+          <div><span>01</span><span>Tracing and citation</span></div>
+          <div><span>02</span><span>Evaluation and scoring</span></div>
+          <div><span>03</span><span>Review and audit tooling</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Book a technical review</a>
+          <a class="btn btn-ghost" href="#">See our work</a>
+        </div>
+      </div>
+      <div class="stage-col">
+        <div class="stage-label"><span>Motion</span><span>Hover to accelerate</span></div>
+        <div class="stage">
+          <canvas id="stage"></canvas>
+          <div class="tick tick-tl"></div>
+          <div class="tick tick-br"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var opts = { speed: 1, intensity: 1, pointerFollow: true };
+    IconFX.ready()
+      .then(function () { return IconFX.loadKit('icon.png'); })
+      .then(function (kit) { IconFX.scanField(document.getElementById('stage'), kit, opts); })
+      .catch(function (e) { console.warn('Scan Field failed to start', e); });
+  </script>
+</body>
+</html>

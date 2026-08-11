@@ -26,7 +26,7 @@ export function ContactCta() {
         </Reveal>
         <HoverTitle
           as="h2"
-          text="هل مؤسستك جاهزة للتحول الرقمي الحقيقي؟"
+          text="هل مؤسستـك جاهـزة للتحـول الرقمـي الحقيقـي؟"
           className={`h-section ${styles.title}`}
         />
         <Reveal delay={0.15}>

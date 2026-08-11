@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { HoverTitle } from "@/components/typography/HoverTitle";
-import { Parallax } from "@/components/motion/Parallax";
+import { FxCanvas } from "@/components/three/FxCanvas";
 import { Reveal } from "@/components/motion/Reveal";
 import styles from "./Offices.module.css";
 
@@ -39,24 +38,22 @@ export function Offices() {
       {/* soft blurred halo, top inline-start (top-right in RTL) — like the deck */}
       <div className={styles.decor} aria-hidden="true" />
 
-      {/* 3D world map backdrop, drifting slowly behind the cards */}
-      <div className={styles.mapLayer} aria-hidden="true">
-        <Parallax speed={0.15} className={styles.mapParallax}>
-          <Image
-            src="/assets/28-global-offices/world-map-3d.png"
-            alt=""
-            fill
-            sizes="(max-width: 900px) 100vw, 58vw"
-            className={styles.mapImg}
-          />
-        </Parallax>
+      {/* live vector world map — a reading head lights Saudi Arabia, Spain and
+          the UAE and draws arcs from Riyadh to Madrid and Dubai */}
+      <div className={styles.mapLayer}>
+        <FxCanvas
+          effect="sovereignGrid"
+          className={styles.mapCanvas}
+          opts={{ speed: 1, intensity: 1, pointerFollow: true }}
+          fallbackSrc="/assets/28-global-offices/world-map-3d.png"
+        />
       </div>
 
       <div className={`container ${styles.inner}`}>
         <header className={styles.header}>
           <HoverTitle
             as="h2"
-            text="مكاتبنا العالمية"
+            text="مكاتبنـا العالميـة"
             className={`h-section ${styles.title}`}
             entrance="scroll"
           />

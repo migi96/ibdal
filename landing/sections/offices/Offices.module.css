@@ -20,27 +20,28 @@
   pointer-events: none;
 }
 
-/* ---- map backdrop ---- */
+/* ---- live map layer ---- */
 /* inline-end = physical left in RTL, where the map lives on the slide */
 .mapLayer {
   position: absolute;
-  inset-block: clamp(48px, 7vw, 110px) 0;
-  inset-inline-end: -6%;
-  inline-size: min(58vw, 940px);
-  pointer-events: none;
-  -webkit-mask-image: radial-gradient(95% 85% at 45% 52%, #000 42%, transparent 76%);
-  mask-image: radial-gradient(95% 85% at 45% 52%, #000 42%, transparent 76%);
+  inset-block: clamp(96px, 12vw, 180px) clamp(40px, 6vw, 90px);
+  inset-inline-end: -4%;
+  inline-size: min(62vw, 980px);
+  -webkit-mask-image: radial-gradient(92% 88% at 46% 50%, #000 52%, transparent 82%);
+  mask-image: radial-gradient(92% 88% at 46% 50%, #000 52%, transparent 82%);
 }
 
-/* bleed so the parallax drift (~±8vh) never exposes a hard edge */
-.mapParallax {
-  position: absolute;
-  inset: -12% 0;
+.mapCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.mapImg {
+/* reduced-motion fallback keeps the same footprint */
+.mapCanvas img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  object-position: center;
 }
 
 /* ---- content ---- */
@@ -197,10 +198,11 @@
 /* ---- responsive: cards stack full-width, map becomes a faint backdrop ---- */
 @media (max-width: 900px) {
   .mapLayer {
-    inset-block: 0;
-    inset-inline: -30% -18%;
+    inset-block: 18% auto;
+    block-size: 46vh;
+    inset-inline: -12%;
     inline-size: auto;
-    opacity: 0.4;
+    opacity: 0.45;
   }
 
   .cards {

@@ -78,7 +78,7 @@ export function Clients() {
         </Reveal>
         <HoverTitle
           as="h2"
-          text="شركاء النجاح والريادة"
+          text="شركـاء النجـاح والريـادة"
           className={`h-section ${styles.title}`}
         />
         <Reveal delay={0.15}>

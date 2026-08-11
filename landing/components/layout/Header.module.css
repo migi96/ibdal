@@ -1,69 +1,197 @@
+/* ============ Header — sky-blue & white, gliding-pill hover ============ */
+
 .header {
   position: fixed;
   inset-inline: 0;
   top: 0;
   z-index: 100;
-  padding-block: 14px;
+  padding-block: 16px;
+  /* two custom props drive the whole light/dark theme of the bar */
+  --hd-fg: #ffffff;
+  --hd-fg-dim: rgba(233, 240, 253, 0.82);
+  --hd-accent: #bcd6ff;
+  transition:
+    background-color 0.4s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo),
+    padding 0.4s var(--ease-out-expo),
+    backdrop-filter 0.4s ease;
+}
+
+/* frosted sky-white bar once scrolled — navy text, sky-blue accents */
+.header.scrolled {
+  padding-block: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(233, 242, 255, 0.86)
+  );
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 12px 40px rgba(13, 27, 62, 0.12);
+  --hd-fg: #0d1b3e;
+  --hd-fg-dim: #43567e;
+  --hd-accent: #2563eb;
+}
+
+/* particle layer sits above the links, never intercepts pointer events */
+.particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .row {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
+/* ---- brand ---- */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   font-weight: 700;
-  font-size: 17px;
-  color: var(--white);
+  font-size: 18px;
+  color: var(--hd-fg);
+  transition: color 0.4s ease;
 }
 
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, rgba(74, 143, 231, 0.9), rgba(24, 62, 235, 0.9));
+  box-shadow: 0 6px 18px rgba(24, 62, 235, 0.35);
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+
+.brandMark img {
+  filter: brightness(0) invert(1);
+}
+
+.brand:hover .brandMark {
+  transform: rotate(-8deg) scale(1.06);
+  box-shadow: 0 10px 26px rgba(24, 62, 235, 0.5);
+}
+
+.brandName {
+  letter-spacing: 0.01em;
+}
+
+/* ---- nav with the gliding indicator ---- */
 .nav {
+  position: relative;
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+}
+
+/* the sky-blue pill that slides under the hovered link.
+   Anchored to physical left:0 so the GSAP translateX (physical, in px) lines
+   up with the links' offsetLeft — logical inset-inline-start would flip the
+   origin to the right in RTL and park the pill by the brand. */
+.indicator {
+  position: absolute;
+  inset-block: 4px;
+  left: 0;
+  right: auto;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(120deg, rgba(74, 143, 231, 0.22), rgba(24, 62, 235, 0.28));
+  border: 1px solid rgba(120, 170, 255, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  /* GSAP animates x + width; translate lives in the transform channel */
+  will-change: transform, width, opacity;
+}
+
+.scrolled .indicator {
+  background: linear-gradient(120deg, rgba(37, 99, 235, 0.12), rgba(74, 143, 231, 0.18));
+  border-color: rgba(37, 99, 235, 0.28);
 }
 
 .link {
-  padding: 9px 14px;
-  border-radius: 10px;
-  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14.5px;
   font-weight: 500;
-  color: rgba(223, 233, 251, 0.85);
-  transition:
-    color 0.25s ease,
-    background-color 0.25s ease;
+  white-space: nowrap;
+  color: var(--hd-fg-dim);
+  transition: color 0.28s ease, transform 0.28s var(--ease-out-expo);
 }
 
 .link:hover {
-  color: var(--white);
-  background: rgba(157, 185, 238, 0.12);
-}
-
-.cta {
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  border: 1px solid rgba(120, 158, 226, 0.5);
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s var(--ease-out-expo);
-}
-
-.cta:hover {
-  background: rgba(24, 62, 235, 0.35);
-  border-color: rgba(120, 158, 226, 0.9);
+  color: var(--hd-fg);
   transform: translateY(-1px);
 }
 
+/* ---- CTA with a sweeping glow ---- */
+.cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(120deg, #2f5fe8, #183eeb);
+  box-shadow: 0 8px 22px rgba(24, 62, 235, 0.35);
+  transition:
+    transform 0.3s var(--ease-out-expo),
+    box-shadow 0.3s ease;
+}
+
+.ctaLabel {
+  position: relative;
+  z-index: 1;
+}
+
+/* diagonal sheen that sweeps across on hover */
+.ctaGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 80%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(24, 62, 235, 0.55);
+}
+
+.cta:hover .ctaGlow {
+  transform: translateX(120%);
+}
+
+/* ---- small screens: hide the nav rail, keep brand + CTA ---- */
 @media (max-width: 900px) {
   .nav {
     display: none;
+  }
+  .cta {
+    padding: 10px 18px;
   }
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sovereign Grid — AI services section</title>
+  <link rel="stylesheet" href="modernist.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="sovereign-grid.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); font-family: var(--font-body); }
+    a { color: var(--color-accent-700); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px; }
+    .copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-divider); }
+    .copy-l { padding: 48px 48px 40px 0; border-right: 2px solid var(--color-divider); }
+    .copy-r { padding: 48px 0 40px 48px; }
+    .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+    h1 { font-size: 42px; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 18px; max-width: 11em; text-wrap: pretty; }
+    .lede { font-size: 16px; line-height: 1.6; max-width: 34em; margin: 0 0 28px; color: var(--color-neutral-800); }
+    .actions { display: flex; gap: 12px; }
+    .sites { border-top: 2px solid var(--color-divider); }
+    .sites > div { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--color-divider);
+      font-size: 14px; align-items: baseline; }
+    .sites .n { color: var(--color-neutral-600); width: 2.5em; }
+    .sites .n.hot { color: var(--color-accent); }
+    .sites [dir="rtl"] { text-align: left; max-width: 34em; }
+    .sites em { display: block; font-style: normal; font-size: 13px; line-height: 1.75;
+      color: var(--color-neutral-700); margin-top: 6px; }
+    .stage { position: relative; padding: 12px 0 20px; border-bottom: 2px solid var(--color-text); }
+    .stage-label { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-divider); font-size: 10px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--color-neutral-600); }
+    .stage-box { position: relative; height: 600px; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .tick { position: absolute; width: 12px; height: 12px; }
+    .tick-tl { left: 0; top: 8px; border-left: 2px solid var(--color-accent); border-top: 2px solid var(--color-accent); }
+    .tick-br { right: 0; bottom: 8px; border-right: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+    @media (max-width: 1000px) {
+      .copy { grid-template-columns: minmax(0, 1fr); }
+      .copy-l { padding: 36px 0 28px; border-right: 0; border-bottom: 2px solid var(--color-divider); }
+      .copy-r { padding: 28px 0; }
+      h1 { font-size: 30px; }
+      .stage-box { height: 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="copy">
+        <div class="copy-l">
+          <div class="kicker">AI Services</div>
+          <h1>Sovereign AI, operated where your data lives.</h1>
+          <p class="lede">One platform, run inside each jurisdiction you answer to, with governance and evaluation built into the pipeline.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Book a technical review</a>
+            <a class="btn btn-ghost" href="#">See our work</a>
+          </div>
+        </div>
+        <div class="copy-r">
+          <div class="sites">
+            <div><span class="n hot">01</span><span dir="rtl" lang="ar">المملكة العربية السعودية - الرياض<em>محور عملياتنا الاستراتيجية ومركز حلول الذكاء الاصطناعي السيادي والحوكمة المتطورة.</em></span></div>
+            <div><span class="n">02</span><span dir="rtl" lang="ar">إسبانيا - مدريد</span></div>
+            <div><span class="n">03</span><span dir="rtl" lang="ar">الإمارات العربية المتحدة - دبي</span></div>
+          </div>
+        </div>
+    </div>
+    <div class="stage">
+      <div class="stage-label"><span>Motion / 01</span><span>Hover to steer</span></div>
+      <div class="stage-box">
+        <canvas id="stage"></canvas>
+        <div class="tick tick-tl"></div>
+        <div class="tick tick-br"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var opts = { speed: 1, intensity: 1, pointerFollow: true };
+    WorldFX.ready()
+      .then(function () { return WorldFX.loadWorld('world.svg'); })
+      .then(function (world) { WorldFX.sovereignGrid(document.getElementById('stage'), world, opts); })
+      .catch(function (e) { console.warn('Sovereign Grid failed to start', e); });
+  </script>
+</body>
+</html>

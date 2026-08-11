@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signal Pulse — AI services section</title>
+  <link rel="stylesheet" href="modernist.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="signal-pulse.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); font-family: var(--font-body); }
+    a { color: var(--color-accent-700); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 56px 24px; }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) 520px;
+      border-top: 2px solid var(--color-text); border-bottom: 2px solid var(--color-text); }
+    .copy { padding: 56px 48px 48px 0; border-right: 2px solid var(--color-divider); }
+    .kicker { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; }
+    h1 { font-size: 44px; line-height: 1.12; letter-spacing: -.015em; margin: 0 0 20px; max-width: 12em; text-wrap: pretty; }
+    .lede { font-size: 16px; line-height: 1.6; max-width: 34em; margin: 0 0 32px; color: var(--color-neutral-800); }
+    .list { border-top: 2px solid var(--color-divider); margin-bottom: 32px; }
+    .list div { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--color-divider); font-size: 14px; }
+    .list span:first-child { color: var(--color-neutral-600); width: 2.5em; }
+    .actions { display: flex; gap: 12px; }
+    .stage-col { padding: 16px 0 24px 40px; }
+    .stage-label { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-divider); font-size: 10px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--color-neutral-600); }
+    /* the mark's outer and inner arcs are white-to-pale, so it needs a dark ground */
+    .stage { position: relative; height: 470px; background: #050d2b; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; }
+    #glow { position: absolute; left: 50%; top: 62%; width: 620px; height: 620px; margin: -310px 0 0 -310px;
+      background: radial-gradient(circle, rgba(60,120,255,.42) 0%, rgba(24,62,235,.16) 42%, rgba(24,62,235,0) 70%);
+      opacity: 0; pointer-events: none; }
+    #mark { position: relative; display: block; overflow: visible; }
+    .tick { position: absolute; width: 14px; height: 14px; }
+    .tick-tl { left: 0; top: 0; border-left: 2px solid var(--color-accent); border-top: 2px solid var(--color-accent); }
+    .tick-br { right: 0; bottom: 0; border-right: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); }
+    @media (max-width: 1000px) {
+      .row { grid-template-columns: minmax(0, 1fr); }
+      .copy { padding: 40px 0 32px; border-right: 0; border-bottom: 2px solid var(--color-divider); }
+      h1 { font-size: 32px; }
+      .stage-col { padding: 16px 0 24px; }
+      .stage { height: 360px; }
+      #mark { width: 280px; height: 210px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row">
+      <div class="copy">
+        <div class="kicker">AI Services</div>
+        <h1>Every answer starts at a single point and carries outward.</h1>
+        <p class="lede">One request, resolved through retrieval, reasoning and delivery — and traced end to end on the way back.</p>
+        <div class="list">
+          <div><span>01</span><span>Request and intent</span></div>
+          <div><span>02</span><span>Retrieval and reasoning</span></div>
+          <div><span>03</span><span>Delivery and trace</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Book a technical review</a>
+          <a class="btn btn-ghost" href="#">See our work</a>
+        </div>
+      </div>
+      <div class="stage-col">
+        <div class="stage-label"><span>Motion / 01</span><span>Hover to accelerate</span></div>
+        <div class="stage" id="stage">
+          <div id="glow"></div>
+      <svg id="mark" width="380" height="285" viewBox="0 0 175 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#lm_clip)">
+          <path data-arc="2" d="M166.09 62.17C153.16 47.26 136.05 36.03 116.57 30.33C107.24 27.57 97.35 26.11 87.11 26.11C76.87 26.11 66.99 27.57 57.65 30.33C38.18 36.04 21.06 47.26 8.12999 62.17C-3.19001 52.36 -2.64001 34.51 9.39999 25.59C21.58 16.57 35.39 9.62 50.3 5.27C61.97 1.83 74.34 0 87.11 0C99.88 0 112.26 1.83 123.91 5.27C138.82 9.62 152.63 16.57 164.81 25.59C176.99 34.61 177.4 52.36 166.08 62.17H166.09Z" fill="url(#lm_g0)"></path>
+          <path data-arc="1" d="M146.34 79.28L126.59 96.4C120.14 88.93 111.58 83.32 101.85 80.46C97.17 79.1 92.24 78.35 87.12 78.35C82 78.35 77.07 79.09 72.39 80.46L65.04 55.44C72.05 53.33 79.46 52.25 87.12 52.25C94.78 52.25 102.19 53.34 109.2 55.44C123.8 59.66 136.64 68.06 146.35 79.28H146.34Z" fill="#183EEB"></path>
+          <path data-arc="0" d="M87.1101 130.6L67.3601 113.48L47.6401 96.4C54.0901 88.93 62.6501 83.32 72.3801 80.46L79.7601 105.54L87.1101 130.59V130.6Z" fill="url(#lm_g1)"></path>
+        </g>
+        <defs>
+          <linearGradient id="lm_g0" x1="87.1302" y1="0" x2="87.1302" y2="62.17" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white"></stop>
+            <stop offset="1" stop-color="#EAF2FC"></stop>
+          </linearGradient>
+          <linearGradient id="lm_g1" x1="67.3751" y1="80.46" x2="67.3751" y2="130.6" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white"></stop>
+            <stop offset="1" stop-color="#EAF2FC"></stop>
+          </linearGradient>
+          <clipPath id="lm_clip">
+            <rect width="174.23" height="130.6" fill="white"></rect>
+          </clipPath>
+        </defs>
+      </svg>
+          <div class="tick tick-tl"></div>
+          <div class="tick tick-br"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    SignalPulse.ready().then(function () {
+      SignalPulse.mount(document.getElementById('mark'), {
+        stage: document.getElementById('stage'),
+        glow: document.getElementById('glow'),
+        speed: 1,
+        cycle: 2.5
+      });
+    });
+  </script>
+</body>
+</html>

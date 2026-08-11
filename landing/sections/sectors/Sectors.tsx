@@ -65,6 +65,12 @@ const SECTORS: SectorCard[] = [
 export function Sectors() {
   return (
     <section className={`section ${styles.sectors}`} id="sectors">
+      {/* wavy blue accents — physical top-left and bottom-right per the design */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/assets/sectors/wave-top-left.png" alt="" className={styles.waveTL} aria-hidden="true" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/assets/sectors/wave-bottom-right.png" alt="" className={styles.waveBR} aria-hidden="true" />
+
       <div className={`container ${styles.inner}`}>
         <header className={styles.header}>
           <Reveal>

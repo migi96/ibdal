@@ -1,415 +1,350 @@
-/* ============ Services — pinned horizontal gallery ============ */
+/* ============ Services — dark "services-variation-dark-split" ============
+   Figma node 20:587. Royal-blue → near-black band, white text. Centred
+   gradient header, a 3×2 glass-card grid (RTL → 01 lands top-right), and a
+   CTA panel. Base rules are the ≤600px single-column baseline; the media
+   queries widen to 2 then 3 columns. All motion is transform/opacity only. */
 
 .services {
   position: relative;
   overflow: clip;
-  background: var(--paper);
+  color: var(--white);
+  background: linear-gradient(226deg, #183eeb 46%, #0b0b0b 133%);
 }
 
-/* ---------------- header (slide 15 aesthetic) ---------------- */
+/* decorative parallax glow (behind everything) */
+.glow {
+  position: absolute;
+  inset-inline-start: -10%;
+  top: -8%;
+  z-index: 0;
+  pointer-events: none;
+  width: 60%;
+  max-width: 720px;
+  aspect-ratio: 1 / 1;
+}
+
+.glowOrb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(120, 170, 255, 0.28),
+    transparent 62%
+  );
+  filter: blur(30px);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(48px, 6vw, 96px);
+}
+
+/* ---------------- header ---------------- */
 
 .head {
-  position: relative;
   display: grid;
-  gap: 20px;
-  justify-items: start;
-  padding-block: clamp(72px, 10vw, 140px) clamp(48px, 6vw, 88px);
+  gap: 16px;
+  justify-items: center;
+  text-align: center;
 }
 
-.head > :not(.headGhost) {
-  position: relative;
-}
-
-.headGhost {
-  position: absolute;
-  inset-inline-end: 4%;
-  top: -14%;
-  pointer-events: none;
-  user-select: none;
-}
-
-.headGhost span {
-  display: block;
-  font-size: clamp(160px, 26vw, 340px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  color: rgba(37, 99, 235, 0.07);
-}
-
-.title {
-  background: var(--grad-title);
+/* gradient title clipped to the glyphs (HoverTitle re-clips inner spans) */
+.head .title {
+  font-size: clamp(30px, 4.6vw, 48px);
+  font-weight: 800;
+  line-height: 1.4;
+  background: linear-gradient(112deg, #c3d9f4 24%, #ffffff 80%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.headMeta {
-  display: grid;
-  gap: 22px;
-  justify-items: start;
+.subWrap {
+  width: 100%;
 }
 
 .subtitle {
-  max-width: 60ch;
-  font-size: clamp(15px, 1.3vw, 18px);
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-/* ---------------- stage & track ----------------
-   Base = mobile / coarse pointer / reduced motion: vertical stack of cards.
-   The desktop media block below mirrors MOTION_OK + DESKTOP_POINTER exactly,
-   so CSS layout and the GSAP matchMedia pin always agree. */
-
-.stage {
-  position: relative;
-  padding-block: 0 clamp(72px, 10vw, 120px);
-}
-
-.track {
-  width: min(100% - 48px, var(--container));
+  max-width: 46ch;
   margin-inline: auto;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 300;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* ---------------- grid ---------------- */
+
+.grid {
   display: grid;
-  gap: clamp(20px, 3vw, 28px);
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
-.panel {
-  position: relative;
-  display: grid;
-  overflow: clip;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(120, 158, 226, 0.14);
-  background:
-    radial-gradient(90% 70% at 15% 0%, rgba(24, 62, 235, 0.16), transparent 60%),
-    linear-gradient(205deg, #101b3c 0%, var(--navy-950) 70%);
-  color: var(--white);
-}
-
-/* -- accent column (grad-royal side strip from the deck's split slides) -- */
-
-.accent {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 24px;
-  background: var(--grad-royal);
-  overflow: clip;
-}
-
-.accent::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    120% 90% at 85% -10%,
-    rgba(255, 255, 255, 0.14),
-    transparent 55%
-  );
-  pointer-events: none;
-}
-
-.accentHead {
-  position: relative;
-  display: grid;
-  gap: 8px;
-}
-
-.accentGroup {
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 1.5;
-  color: var(--white);
-}
-
-.accentKicker {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #a3b4ff;
-  text-align: start;
-}
-
-.accentIndex {
-  display: none;
-  position: relative;
-  font-size: clamp(40px, 4.6vh, 56px);
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.22);
-  text-align: left;
-}
-
-.accentIndex span {
-  font-size: 0.42em;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.34);
-}
-
-/* -- content area -- */
-
-.content {
-  position: relative;
-  display: grid;
-  padding: clamp(30px, 6vw, 56px) clamp(20px, 4vw, 48px) clamp(40px, 8vw, 64px);
-}
-
-.orb {
-  position: absolute;
-  inset-inline-end: -12%;
-  top: -16%;
-  width: clamp(280px, 38vw, 540px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(24, 62, 235, 0.2), transparent 65%);
-  pointer-events: none;
-}
-
-.ghost {
-  position: absolute;
-  bottom: -0.16em;
-  inset-inline-start: -1%;
-  font-size: clamp(120px, 26vw, 220px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  color: rgba(74, 143, 231, 0.09);
-  pointer-events: none;
-  user-select: none;
-}
-
-.cardReveal {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-
-/* -- glass service card (deck card, scaled up) -- */
-
+/* -- glass service card -- */
 .card {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(18px, 2vw, 30px);
-  padding: clamp(24px, 3vw, 44px) clamp(22px, 2.8vw, 46px);
-  border-radius: var(--radius-md);
-  background: rgba(16, 20, 38, 0.72);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 24px 70px rgba(4, 8, 24, 0.42);
-  transition: box-shadow 0.45s ease;
-}
-
-/* gradient border ring — brightens on hover */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 8px;
   background: linear-gradient(
-    135deg,
-    rgba(74, 143, 231, 0.65),
-    rgba(255, 255, 255, 0.08) 40%,
-    rgba(24, 62, 235, 0.55)
+    148deg,
+    rgba(74, 143, 231, 0.18) 1%,
+    rgba(255, 255, 255, 0) 73%
   );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  opacity: 0.35;
-  transition: opacity 0.45s ease;
-  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 44px rgba(4, 8, 24, 0.28);
+  transition:
+    transform 0.45s var(--ease-out-expo),
+    border-color 0.4s ease,
+    box-shadow 0.45s ease;
 }
 
 .card:hover {
-  box-shadow: 0 30px 90px rgba(24, 62, 235, 0.32);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.iconWrap {
-  flex: none;
-  display: block;
-}
-
-.iconBubble {
-  display: grid;
-  place-items: center;
-  width: clamp(56px, 5.4vw, 78px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 32% 26%,
-    rgba(46, 92, 168, 0.55),
-    rgba(24, 62, 235, 0.14) 72%
-  );
-  border: 1px solid rgba(120, 158, 226, 0.3);
-  transition:
-    transform 0.4s var(--ease-out-expo),
-    border-color 0.3s ease;
-}
-
-.iconBubble img {
-  width: 44%;
-}
-
-.card:hover .iconBubble {
   transform: translateY(-6px);
-  border-color: rgba(120, 158, 226, 0.75);
+  border-color: rgba(120, 170, 255, 0.55);
+  box-shadow:
+    0 30px 70px rgba(24, 62, 235, 0.32),
+    0 0 0 1px rgba(120, 170, 255, 0.2);
 }
 
+/* -- animated icon stage (canvas / static fallback fills it) -- */
+.iconStage {
+  position: relative;
+  width: 214px;
+  max-width: 100%;
+  height: 200px;
+}
+
+.iconCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* -- text block: right-aligned (RTL inline-start) -- */
 .cardText {
-  flex: 1;
-  min-width: 0;
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+  text-align: start;
 }
 
-.cardText h3 {
-  font-size: clamp(18px, 1.9vw, 27px);
+.cardNum {
+  font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.1;
   color: var(--white);
 }
 
-.cardText p {
-  font-size: clamp(13.5px, 1.05vw, 16px);
+.cardTitle {
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--white);
+  transition: color 0.35s ease;
+}
+
+/* hover: title shifts to a lighter blue */
+.card:hover .cardTitle {
+  color: #a9c8ff;
+}
+
+.cardSub {
+  font-size: clamp(15px, 1.4vw, 18px);
   font-weight: 300;
-  line-height: 1.85;
-  color: #9aa4c0;
-  max-width: 52ch;
+  line-height: 1.7;
+  color: #9ca3af;
 }
 
-.chev {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  transform: rotate(-90deg); /* deck orientation */
-  opacity: 0.75;
-  transition:
-    transform 0.35s var(--ease-out-expo),
-    opacity 0.3s ease;
+/* ---------------- CTA panel ---------------- */
+
+.cta {
+  width: 100%;
 }
 
-.chev img {
-  width: 15px;
-}
-
-.card:hover .chev {
-  transform: translateX(5px) rotate(-90deg);
-  opacity: 1;
-}
-
-/* -- progress rail (desktop gallery only) -- */
-
-.progress {
-  display: none;
-  position: absolute;
-  bottom: 32px;
-  inset-inline-start: 50%;
-  translate: -50% 0;
-  width: 220px;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(157, 185, 238, 0.18);
+.ctaInner {
+  position: relative;
   overflow: hidden;
-  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    148deg,
+    rgba(74, 143, 231, 0.22) 1%,
+    rgba(255, 255, 255, 0.02) 78%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(4, 8, 24, 0.36);
 }
 
-.progressBar {
-  display: block;
+/* brain animation square — centred above the text on narrow */
+.brainStage {
+  position: relative;
+  width: clamp(240px, 26vw, 360px);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
+.brainCanvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border-radius: inherit;
-  background: var(--grad-divider);
-  transform: scaleX(0);
 }
 
-/* ---------------- desktop pinned gallery ----------------
-   Must mirror MOTION_OK + DESKTOP_POINTER from lib/motion/gsap exactly. */
+.ctaBody {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  text-align: start;
+}
 
-@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (min-width: 1024px) {
-  .stage {
-    height: 100svh;
-    padding: 0;
-    overflow: hidden;
+.ctaTitle {
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.ctaText {
+  max-width: 54ch;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 300;
+  line-height: 1.9;
+  color: #cbd5e1;
+}
+
+.ctaButton {
+  align-self: flex-start; /* RTL cross-start → right edge */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: clamp(15px, 1.4vw, 17px);
+  font-weight: 600;
+  color: var(--white);
+  background: linear-gradient(120deg, #4a8fe7 0%, #183eeb 100%);
+  box-shadow: 0 14px 30px rgba(24, 62, 235, 0.38);
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    box-shadow 0.35s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 46px rgba(24, 62, 235, 0.5);
+}
+
+.ctaArrow {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* contact chips */
+.chips {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.chip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s var(--ease-out-expo);
+}
+
+a.chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(120, 170, 255, 0.5);
+  background: rgba(120, 170, 255, 0.1);
+}
+
+.chipLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.chipValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  word-break: break-word;
+}
+
+/* ---------------- footer line ---------------- */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: clamp(-24px, -2vw, -12px);
+}
+
+.footer span {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: #4b5563;
+}
+
+/* ---------------- responsive: 2-col then 3-col ---------------- */
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .track {
-    width: max-content;
-    margin: 0;
-    display: flex;
-    gap: 0;
-    height: 100%;
-    will-change: transform;
+  .chips {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CTA splits: text on the RIGHT (RTL first track), brain on the LEFT */
+@media (min-width: 720px) {
+  .ctaInner {
+    grid-template-columns: 1fr clamp(240px, 26vw, 360px);
   }
 
-  .panel {
-    width: 100vw;
-    height: 100svh;
-    border: none;
-    border-radius: 0;
-    grid-template-columns: clamp(300px, 26vw, 430px) minmax(0, 1fr);
+  .ctaBody {
+    grid-column: 1; /* right in RTL */
   }
 
-  .accent {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    padding: clamp(48px, 8vh, 88px) clamp(30px, 2.8vw, 56px);
+  .brainStage {
+    grid-column: 2; /* left in RTL */
+    margin-inline: 0;
   }
+}
 
-  .accentHead {
-    gap: 14px;
-  }
-
-  .accentGroup {
-    font-size: clamp(26px, 2.2vw, 38px);
-    line-height: 1.4;
-  }
-
-  .accentKicker {
-    font-size: 11px;
-  }
-
-  .accentIndex {
-    display: block;
-  }
-
-  .content {
-    align-content: center;
-    justify-items: center;
-    padding: 0 clamp(48px, 6vw, 120px);
-  }
-
-  .orb {
-    inset-inline-end: 4%;
-    top: -10%;
-  }
-
-  .ghost {
-    bottom: -0.14em;
-    inset-inline-start: -2%;
-    font-size: clamp(260px, 42vh, 430px);
-  }
-
-  .cardReveal {
-    max-width: 760px;
-  }
-
-  .progress {
-    display: flex;
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

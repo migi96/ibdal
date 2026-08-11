@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FxCanvas } from "@/components/three/FxCanvas";
 import { HoverTitle } from "@/components/typography/HoverTitle";
 import { Parallax } from "@/components/motion/Parallax";
 import { Reveal } from "@/components/motion/Reveal";
@@ -50,12 +51,11 @@ export function About() {
           />
         </Parallax>
         <Parallax speed={0.5} className={styles.logoFloat}>
-          <Image
-            src="/assets/03-about-us-opener/logo-3d.png"
-            alt=""
-            width={2394}
-            height={1792}
-            sizes="180px"
+          <FxCanvas
+            effect="broadcast"
+            fallbackSrc="/assets/03-about-us-opener/logo-3d.png"
+            className={styles.logoCanvas}
+            opts={{ speed: 1, intensity: 1, pointerFollow: false }}
           />
         </Parallax>
         <Parallax speed={0.18} className={styles.wash}>
@@ -132,13 +132,18 @@ export function About() {
             <Parallax speed={0.12} className={styles.foundingArt}>
               <TiltCard className={styles.imageCard} maxTilt={6}>
                 <Image
-                  src="/assets/04-about-us-detail-1/visual-image-card.png"
-                  alt=""
+                  src="/assets/about/saudi-man.png"
+                  alt="أحد كوادر إبداع الفكر"
                   width={380}
                   height={358}
                   sizes="(max-width: 900px) 86vw, 440px"
                 />
               </TiltCard>
+              {/* decorative cursor drifting in a slow zig-zag at the top-right */}
+              <span className={styles.pointer} aria-hidden="true">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/about/pointer.png" alt="" className={styles.pointerImg} />
+              </span>
             </Parallax>
           </Reveal>
         </div>

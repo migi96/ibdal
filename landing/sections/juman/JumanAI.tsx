@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/motion/gsap";
 import { FxCanvas } from "@/components/three/FxCanvas";
+import MagicRings from "@/components/three/MagicRings";
 import { HoverTitle } from "@/components/typography/HoverTitle";
 import { Parallax } from "@/components/motion/Parallax";
 import { Reveal } from "@/components/motion/Reveal";
@@ -105,14 +105,15 @@ export function JumanAI() {
             </p>
             <HoverTitle
               as="h2"
-              text="جُمان AI — الذكاء الاصطناعي السيادي"
-              className={`h-section ${styles.title}`}
+              text="جُمان AI"
+              className={`h-display ${styles.title}`}
+              entrance="scroll"
             />
             <span className={`${styles.launchPill} ${styles.rise}`}>
               تدشين ٢٠٢٦
             </span>
             <p className={`${styles.subtitle} ${styles.rise}`}>
-              المساعد الذكي المؤسسي الأول للغتنا العربية
+              الذكاء الاصطناعي السيادي · المساعد المؤسسي الأول للغتنا العربية
             </p>
             <p className={`${styles.desc} ${styles.rise}`}>
               محرك لغوي ذكي مخصص ومطور محلياً، يعمل بالكامل داخل بيئة الخوادم
@@ -123,13 +124,12 @@ export function JumanAI() {
 
           <div className={styles.introStage}>
             <Parallax speed={0.2} className={styles.letterWrap}>
-              <div className={styles.letterFloat}>
-                <Image
-                  src="/assets/13-juman-ai-capabilities/3d-arabic-letter.png"
-                  alt=""
-                  width={560}
-                  height={560}
-                  className={styles.letterImg}
+              <div className={`${styles.letterFloat} ${styles.orbStage}`}>
+                <FxCanvas
+                  effect="counterRotate"
+                  fallbackSrc="/fx/counter-rotate-orb-1.png"
+                  className={styles.orbCanvas}
+                  opts={{ speed: 1, intensity: 1, pointerFollow: true }}
                 />
               </div>
             </Parallax>
@@ -148,13 +148,29 @@ export function JumanAI() {
 
       {/* ————— Act 2 · capabilities ————— */}
       <div className={`${styles.act} ${styles.caps}`}>
-        <div className={styles.capsTexture} aria-hidden="true">
-          <Image
-            src="/assets/13-juman-ai-capabilities/bg-metallic-texture.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className={styles.capsTextureImg}
+        <div className={styles.capsRings} aria-hidden="true">
+          <MagicRings
+            color="#A855F7"
+            colorTwo="#6366F1"
+            ringCount={6}
+            speed={1}
+            attenuation={10}
+            lineThickness={2}
+            baseRadius={0.35}
+            radiusStep={0.1}
+            scaleRate={0.1}
+            opacity={1}
+            blur={0}
+            noiseAmount={0.1}
+            rotation={0}
+            ringGap={1.5}
+            fadeIn={0.7}
+            fadeOut={0.5}
+            followMouse={false}
+            mouseInfluence={0.2}
+            hoverScale={1.2}
+            parallax={0.05}
+            clickBurst={false}
           />
         </div>
 
@@ -184,13 +200,12 @@ export function JumanAI() {
                   />
                 </span>
               </div>
-              <div className={styles.heroFig} aria-hidden="true">
-                <Image
-                  src="/assets/13-juman-ai-capabilities/3d-arabic-letter.png"
-                  alt=""
-                  width={480}
-                  height={480}
-                  className={styles.heroLetter}
+              <div className={`${styles.heroFig} ${styles.glassStage}`}>
+                <FxCanvas
+                  effect="glassSuspension"
+                  fallbackSrc="/assets/13-juman-ai-capabilities/3d-arabic-letter.png"
+                  className={styles.glassCanvas}
+                  opts={{ speed: 1, intensity: 1, pointerFollow: true }}
                 />
               </div>
               <div className={styles.cardText}>
@@ -224,13 +239,12 @@ export function JumanAI() {
                   القرار من استخراج رؤى فورية.
                 </p>
               </div>
-              <div className={styles.cardFig} aria-hidden="true">
-                <Image
-                  src="/assets/13-juman-ai-capabilities/3d-server-integration.png"
-                  alt=""
-                  width={600}
-                  height={600}
-                  className={styles.figServer}
+              <div className={`${styles.cardFig} ${styles.loopStage}`}>
+                <FxCanvas
+                  effect="dataUplink"
+                  fallbackSrc="/fx/data-uplink-stack.png"
+                  className={styles.loopCanvas}
+                  opts={{ speed: 1, intensity: 1, pointerFollow: true }}
                 />
               </div>
             </TiltCard>
@@ -258,8 +272,8 @@ export function JumanAI() {
               </div>
               <div className={`${styles.cardFig} ${styles.loopStage}`}>
                 <FxCanvas
-                  effect="selfDraw"
-                  fallbackSrc="/fx/self-draw-loop.png"
+                  effect="flowLoop"
+                  fallbackSrc="/fx/flow-loop-loop.png"
                   className={styles.loopCanvas}
                   opts={{ speed: 1, intensity: 1 }}
                 />

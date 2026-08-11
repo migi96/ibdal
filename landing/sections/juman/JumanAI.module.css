@@ -168,6 +168,21 @@
   height: auto;
 }
 
+/* counter-rotate orb stage that replaced the static أب letters */
+.orbStage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.orbCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .chipLayer {
   position: absolute;
   inset: 0;
@@ -221,16 +236,15 @@
   isolation: isolate;
 }
 
-.capsTexture {
+/* MagicRings shader field replacing the old metallic texture */
+.capsRings {
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 0.14;
+  opacity: 0.55;
   pointer-events: none;
-}
-
-.capsTextureImg {
-  object-fit: cover;
+  -webkit-mask-image: radial-gradient(80% 70% at 50% 45%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(80% 70% at 50% 45%, #000 55%, transparent 100%);
 }
 
 .capsInner {
@@ -341,6 +355,23 @@
   width: min(70%, 320px);
   height: auto;
   filter: drop-shadow(0 32px 64px rgba(24, 62, 235, 0.5));
+}
+
+/* glass-suspension canvas stage for the HERO-01 card */
+.glassStage {
+  position: relative;
+  width: min(78%, 340px);
+  aspect-ratio: 1 / 1;
+  align-self: center;
+  filter: drop-shadow(0 32px 64px rgba(24, 62, 235, 0.45));
+}
+
+.glassCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* side cards: head row, then text beside the render */
