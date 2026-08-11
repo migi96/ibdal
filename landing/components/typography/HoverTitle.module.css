@@ -3,25 +3,39 @@
   text-wrap: balance;
 }
 
-/* single wrapper the entrance animates; re-clips an inherited gradient so
-   transformed text still paints (Chrome hides gradient-clipped text under a
-   transform otherwise) */
+/* wrapper the entrance animates; re-clips an inherited gradient so transformed
+   text still paints (Chrome hides gradient-clipped text under a transform) */
 .inner {
+  position: relative;
   display: inline-block;
   will-change: transform;
   background: inherit;
   -webkit-background-clip: text;
   background-clip: text;
-  transition:
-    color 0.3s ease,
-    -webkit-text-fill-color 0.3s ease;
 }
 
-/* the one hover behaviour: the whole title turns blue (overrides a
-   gradient-clipped transparent fill with a solid colour) */
+/* the real text: keeps whatever colour/gradient the consumer set on the title */
+.base {
+  display: inline-block;
+}
+
+/* an identical blue copy laid exactly over the base, hidden by a clip edge on
+   the reading-start side. Same text + font ⇒ same wrapping ⇒ perfect overlap. */
+.sweep {
+  position: absolute;
+  inset: 0;
+  color: var(--sky-500);
+  -webkit-text-fill-color: var(--sky-500);
+  background: none;
+  pointer-events: none;
+  /* RTL start = right: clip the whole width from the left so nothing shows,
+     then reveal toward the left on hover (right-most glyph turns blue first) */
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 0.75s cubic-bezier(0.33, 0, 0.2, 1);
+}
+
 @media (hover: hover) and (pointer: fine) {
-  .title:hover .inner {
-    color: var(--sky-500);
-    -webkit-text-fill-color: var(--sky-500);
+  .title:hover .sweep {
+    clip-path: inset(0 0 0 0);
   }
 }
