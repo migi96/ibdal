@@ -20,6 +20,16 @@ export function ContactCta() {
         opts={{ speed: 1, intensity: 0.75, pointerFollow: false, transparent: true }}
       />
 
+      {/* brain light-up, anchored to the physical bottom-left of the footer */}
+      <div className={styles.brain} aria-hidden="true">
+        <FxCanvas
+          effect="lightUp"
+          fallbackSrc="/fx/icons/light-up-lit.png"
+          className={styles.brainCanvas}
+          opts={{ speed: 1, intensity: 1, pointerFollow: true }}
+        />
+      </div>
+
       <div className={`container ${styles.inner}`}>
         <Reveal>
           <p className="kicker">CONTACT US</p>

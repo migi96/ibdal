@@ -70,33 +70,6 @@ const SERVICES: Service[] = [
   },
 ];
 
-interface Contact {
-  label: string;
-  value: string;
-  dir: "ltr" | "rtl";
-  href?: string;
-}
-
-const CONTACTS: Contact[] = [
-  {
-    label: "البريد الإلكتروني",
-    value: "info@ibdai.sa",
-    href: "mailto:info@ibdai.sa",
-    dir: "ltr",
-  },
-  {
-    label: "الهاتف",
-    value: "+966 11 000 0000",
-    href: "tel:+966110000000",
-    dir: "ltr",
-  },
-  {
-    label: "المقر الرئيسي",
-    value: "الرياض، حي الملقا، طريق الملك فهد",
-    dir: "rtl",
-  },
-];
-
 const FX_OPTS = { speed: 1, intensity: 1, pointerFollow: true } as const;
 
 export function Services() {
@@ -150,62 +123,6 @@ export function Services() {
               </div>
             </article>
           ))}
-        </Reveal>
-
-        {/* ---------------- CTA panel ---------------- */}
-        <Reveal className={styles.cta} childSelector={`.${styles.ctaInner}`}>
-          <div className={styles.ctaInner}>
-            <div className={styles.brainStage}>
-              <FxCanvas
-                effect="lightUp"
-                fallbackSrc="/fx/icons/light-up-lit.png"
-                className={styles.brainCanvas}
-                opts={FX_OPTS}
-              />
-            </div>
-
-            <div className={styles.ctaBody}>
-              <HoverTitle
-                as="h3"
-                text="هل مؤسستـك جاهـزة للتحـول الرقمـي الحقيقـي؟"
-                className={styles.ctaTitle}
-                entrance="scroll"
-              />
-              <p className={styles.ctaText}>
-                دعنا نترجم تحدياتك التشغيلية إلى أنظمة ذكية، آمنة، وقابلة للتوسع.
-                فريقنا من الخبراء جاهز لبناء خارطة الطريق الخاصة بك.
-              </p>
-
-              <a className={styles.ctaButton} href="mailto:info@ibdai.sa">
-                <span>احجز استشارة تقنية</span>
-                <span className={styles.ctaArrow} aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-
-              <div className={styles.chips}>
-                {CONTACTS.map((c) => {
-                  const body = (
-                    <>
-                      <span className={styles.chipLabel}>{c.label}</span>
-                      <span className={styles.chipValue} dir={c.dir}>
-                        {c.value}
-                      </span>
-                    </>
-                  );
-                  return c.href ? (
-                    <a key={c.label} className={styles.chip} href={c.href}>
-                      {body}
-                    </a>
-                  ) : (
-                    <div key={c.label} className={styles.chip}>
-                      {body}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
         </Reveal>
 
         {/* ---------------- footer line ---------------- */}

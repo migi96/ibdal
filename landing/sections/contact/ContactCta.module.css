@@ -17,8 +17,31 @@
   pointer-events: none;
 }
 
+/* brain light-up flush in the very bottom-left corner — no gap left or bottom.
+   The vendor contains + centres the 960×1090 frame with ~3–6% padding, so the
+   box matches that aspect and is nudged past the corner (the section clips it),
+   putting the figure hard against both edges. */
+.brain {
+  position: absolute;
+  left: clamp(-52px, -3.6vw, -26px);
+  bottom: clamp(-60px, -4.2vw, -30px);
+  width: clamp(260px, 29vw, 460px);
+  aspect-ratio: 960 / 1090;
+  pointer-events: none;
+  /* behind the content — a background element in the bottom-left corner */
+  z-index: 0;
+}
+
+.brainCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .inner {
   position: relative;
+  z-index: 2;
   display: grid;
   justify-items: center;
   text-align: center;

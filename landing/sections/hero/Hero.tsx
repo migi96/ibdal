@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { gsap, useGSAP, MOTION_OK } from "@/lib/motion/gsap";
 import { SignalPulseMark } from "@/components/three/SignalPulseMark";
-import Scanner from "@/components/three/Scanner";
 import { HoverTitle } from "@/components/typography/HoverTitle";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { Parallax } from "@/components/motion/Parallax";
@@ -59,38 +58,6 @@ export function Hero() {
 
   return (
     <section ref={rootRef} className={styles.hero} id="hero">
-      {/* scanner field — the website masthead background */}
-      <div className={styles.scanner} aria-hidden="true">
-        <Scanner
-          color1="#000092"
-          color2="#3D5DEE"
-          color3="#FFFFFF"
-          speed={0.5}
-          sweepSpeed={0.25}
-          sweepWidth={1.6}
-          sweepFalloff={6}
-          scale={1.5}
-          frequency={2}
-          ripple={0.22}
-          bandDensity={11}
-          lineSharpness={5.5}
-          glow={0.22}
-          scanDirection="vertical"
-          colorSpread={0.7}
-          brightness={1}
-          contrast={1.15}
-          softness={1.4}
-          vignette={0.45}
-          scanline
-          grain
-          grainIntensity={0.05}
-          opacity={1}
-          mouseInteraction
-          mouseRadius={0.5}
-          mouseStrength={0.5}
-        />
-      </div>
-
       {/* depth stack: three decor layers drifting at different speeds */}
       <div className={styles.bg} aria-hidden="true">
         <Parallax speed={0.5} className={styles.glowA}>

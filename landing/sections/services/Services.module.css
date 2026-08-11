@@ -8,7 +8,8 @@
   position: relative;
   overflow: clip;
   color: var(--white);
-  background: linear-gradient(226deg, #183eeb 46%, #0b0b0b 133%);
+  /* #183EEB at the top-left, #0B0B0B at the bottom-right */
+  background: linear-gradient(135deg, #183eeb 0%, #0b0b0b 100%);
 }
 
 /* decorative parallax glow (behind everything) */
@@ -166,139 +167,6 @@
   color: #9ca3af;
 }
 
-/* ---------------- CTA panel ---------------- */
-
-.cta {
-  width: 100%;
-}
-
-.ctaInner {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(24px, 4vw, 48px);
-  align-items: center;
-  padding: clamp(28px, 4vw, 56px);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(
-    148deg,
-    rgba(74, 143, 231, 0.22) 1%,
-    rgba(255, 255, 255, 0.02) 78%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 80px rgba(4, 8, 24, 0.36);
-}
-
-/* brain animation square — centred above the text on narrow */
-.brainStage {
-  position: relative;
-  width: clamp(240px, 26vw, 360px);
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  margin-inline: auto;
-}
-
-.brainCanvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.ctaBody {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 20px;
-  text-align: start;
-}
-
-.ctaTitle {
-  font-size: clamp(24px, 3vw, 38px);
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--white);
-}
-
-.ctaText {
-  max-width: 54ch;
-  font-size: clamp(15px, 1.5vw, 18px);
-  font-weight: 300;
-  line-height: 1.9;
-  color: #cbd5e1;
-}
-
-.ctaButton {
-  align-self: flex-start; /* RTL cross-start → right edge */
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-size: clamp(15px, 1.4vw, 17px);
-  font-weight: 600;
-  color: var(--white);
-  background: linear-gradient(120deg, #4a8fe7 0%, #183eeb 100%);
-  box-shadow: 0 14px 30px rgba(24, 62, 235, 0.38);
-  transition:
-    transform 0.35s var(--ease-out-expo),
-    box-shadow 0.35s ease;
-}
-
-.ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 46px rgba(24, 62, 235, 0.5);
-}
-
-.ctaArrow {
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-/* contact chips */
-.chips {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  width: 100%;
-  margin-top: 6px;
-}
-
-.chip {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 14px 16px;
-  border-radius: 12px;
-  text-align: start;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition:
-    border-color 0.35s ease,
-    background 0.35s ease,
-    transform 0.35s var(--ease-out-expo);
-}
-
-a.chip:hover {
-  transform: translateY(-3px);
-  border-color: rgba(120, 170, 255, 0.5);
-  background: rgba(120, 170, 255, 0.1);
-}
-
-.chipLabel {
-  font-size: 12px;
-  font-weight: 500;
-  color: #9ca3af;
-}
-
-.chipValue {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--white);
-  word-break: break-word;
-}
-
 /* ---------------- footer line ---------------- */
 
 .footer {
@@ -320,26 +188,6 @@ a.chip:hover {
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .chips {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* CTA splits: text on the RIGHT (RTL first track), brain on the LEFT */
-@media (min-width: 720px) {
-  .ctaInner {
-    grid-template-columns: 1fr clamp(240px, 26vw, 360px);
-  }
-
-  .ctaBody {
-    grid-column: 1; /* right in RTL */
-  }
-
-  .brainStage {
-    grid-column: 2; /* left in RTL */
-    margin-inline: 0;
   }
 }
 

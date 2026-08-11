@@ -243,8 +243,9 @@
 
 .cardOpen .art {
   top: 50%;
-  translate: 0 -50%;
-  width: clamp(180px, 19vw, 280px);
+  /* nudged toward the physical left so the sphere clears the copy */
+  translate: -24% -50%;
+  width: clamp(170px, 17vw, 250px);
 }
 
 /* ---- responsive: bento collapses to a single stack ---- */

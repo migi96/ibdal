@@ -132,7 +132,7 @@ export function About() {
             <Parallax speed={0.12} className={styles.foundingArt}>
               <TiltCard className={styles.imageCard} maxTilt={6}>
                 <Image
-                  src="/assets/about/saudi-man.png"
+                  src="/assets/about/founder-visual.png"
                   alt="أحد كوادر إبداع الفكر"
                   width={380}
                   height={358}

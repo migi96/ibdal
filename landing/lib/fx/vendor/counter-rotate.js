@@ -123,13 +123,7 @@
       var cx = W / 2 + pt.x * 8, cy = H / 2 + pt.y * 6 + Math.sin(t * 0.5 * sp) * 4 * iv;
       var s = size * (1 + fx.lift * 0.035);
 
-      if (fx.glow > 0.01) {
-        var gl = ctx.createRadialGradient(cx, cy, s * 0.24, cx, cy, s * 0.72);
-        gl.addColorStop(0, rgba(GLOW, 0.20 * fx.glow * iv));
-        gl.addColorStop(1, rgba(GLOW, 0));
-        ctx.fillStyle = gl;
-        ctx.fillRect(cx - s, cy - s, s * 2, s * 2);
-      }
+      /* hover glow removed — it read as a highlight square behind the orb */
 
       ctx.save();
       ctx.translate(cx, cy);

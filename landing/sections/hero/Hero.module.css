@@ -12,17 +12,6 @@
   padding-block: 120px 96px;
 }
 
-/* scanner shader field behind the masthead content */
-.scanner {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.5;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
-}
-
 .bg {
   position: absolute;
   inset: 0;
@@ -190,6 +179,9 @@
   z-index: 1;
   width: min(66%, 360px);
   height: auto;
+  /* the pulse scales the arcs past the viewBox top; without this the SVG's
+     default overflow:hidden clips the top edge of the outer arc */
+  overflow: visible;
   filter: drop-shadow(0 24px 60px rgba(24, 62, 235, 0.5));
   cursor: pointer;
 }
